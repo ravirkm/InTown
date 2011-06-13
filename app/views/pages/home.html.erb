@@ -1,0 +1,63 @@
+<% if user_signed_in? %>
+  <% unless current_user.admin %>
+    <% title "#{current_user.name}'s Profile" %>
+	<% if current_user.sign_in_count.nil? %>
+	  <p> Welcome to Event Alerts, <%= current_user.name %>! </p>
+	<% end %>
+	<% if current_user.companies.all.length == 0 %>
+	  <h2> You are not currently following any companies. </h2>
+	  <p> Use the search tool above to find companies you are interested in!
+	<% else %>
+	  <h2> Your upcoming events: </h2>
+	  <% for c in current_user.companies do %>
+	    <h3><%= c.company_name%> <%= render :partial => 'companies/unfollow', :locals => { :company_id => c.id} %></h3>
+		<% ecount = 0 %>
+		<% for e in c.events do %>
+		  <% if ecount <  5 %> <!-- && current_user.is_within_x_miles?(100,e.address) %> -->
+			<p><%= "#{e.date} | #{e.address}" %></p>
+			<% ecount = ecount +1 %>
+		  <% end %>
+	    <% end %>
+	  <% end %>
+	  <br/>
+	  <br/>
+	  <p class="ital"> Currently shows next 5 events from companies you follow. 
+	  Soon to be modified to only show events near you. </p> 
+	<% end %>
+  <% else %>
+	<% title "Admin Panel" %>
+  <% end %>
+<% elsif company_signed_in? %>
+  <h2><%= "#{current_company.company_name}'s Schedule" %></h2>
+  <% if current_company.events.size == 0 %>
+	<p> You have no events scheduled! </p>
+  <% else %>
+	<div id="feed">
+	  <%= render :partial => 'shared/feed', :locals => { :collection => @events, :partial => 'events/event' } %>
+	</div>
+  <% end %>
+  <h2> Add an Event </h2>
+  <%= render 'events/event_form' %> 
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+
+<% else %>
+	<div id=register>
+		<% title "Sign Up" %>
+		<div id="sign_up_form">
+			<%= render :partial => "registrations/sign_up" %>
+		</div>
+		<div id="or">
+			<h2> Or: <h2>
+		</div>
+		<div id="services">
+			<%= render :partial => "shared/services" %>
+		</div>
+  </div>
+<% end %>
+
+
+

@@ -1,0 +1,6 @@
+<% unless collection.empty? %>
+  <div class="feed" summary="All feed items">
+    <%= render :partial => partial, :collection => collection %>
+  </div>
+  <%= will_paginate collection %>
+<% end %>

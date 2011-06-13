@@ -1,0 +1,9 @@
+<li>
+  <%= link_to user.name, user %>
+  <% if user_signed_in?  %>
+    <% if current_user.admin? %>
+      | <%= link_to "delete", user, :method => :delete, :confirm => "You sure?",
+                                :title => "Delete #{user.name}" %>
+    <% end %>
+  <% end %>
+</li>

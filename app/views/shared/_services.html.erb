@@ -1,0 +1,39 @@
+<% if @authentications %>
+  <% unless @authentications.empty? %>
+    <p><strong>You can sign in to this account using:</strong></p>
+    <div class="authentications">
+      <% for authentication in @authentications %>
+        <div class="authentication">
+          <%= image_tag "auth/#{authentication.provider}_32.png", :size => "32x32" %>
+          <div class="provider"><%= authentication.provider.titleize %></div>
+          <div class="uid"><%= authentication.uid %></div>
+          <% unless (current_user.has_no_password? and @authentications.all.size == 1) %>
+            <%= link_to "X", authentication, :confirm => 'Are you sure you want to remove this authentication option?', :method => :delete, :class => "remove" %>
+          <% end %>
+        </div>
+      <% end %>
+      <div class="clear"></div>
+    </div>
+  <% end %>
+  <p><strong>Add another service to sign in with:</strong></p>
+<% else %>
+  <h3>Register or sign in through one of these services:</h3>
+<% end %>
+
+<a href="/auth/twitter" class="auth_provider">
+  <%= image_tag "auth/twitter_64.png", :size => "64x64", :alt => "Twitter" %>
+  Twitter
+</a>
+<a href="#" class="auth_provider">                                         <!-- #auth/facebook %> -->
+  <%= image_tag "auth/facebook_64.png", :size => "64x64", :alt => "Facebook" %>
+  Facebook
+</a>
+<a href="#" class="auth_provider">                         <!-- #auth/google_apps %> -->
+  <%= image_tag "auth/google_64.png", :size => "64x64", :alt => "Google" %>
+  Google
+</a> 
+<a href="#" class="auth_provider">                             <!-- #auth/open_id" %> -->
+  <%= image_tag "auth/openid_64.png", :size => "64x64", :alt => "OpenID" %>
+  OpenID
+</a>
+<div class="clear"></div>

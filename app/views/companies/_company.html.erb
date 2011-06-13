@@ -1,0 +1,10 @@
+<li>
+  <%= company.company_name %>
+  <% if current_user.following?(company)  %>
+    <%= render :partial => 'unfollow', :locals => { :company_id => company.id } %>
+  <% else %>
+    <%= render :partial => 'follow', :locals => { :company_id => company.id } %>
+  <% end %>
+</li>
+
+

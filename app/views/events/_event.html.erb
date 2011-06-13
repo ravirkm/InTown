@@ -1,0 +1,19 @@
+<table>
+  <tbody id= "event-<%="#{event.id}"%>" >
+    <tr>
+      <td class="date">
+        <%= event.date %> | </td> 
+      <td class="address">
+        <%= event.address %>  </td>
+      <td>
+        <%= link_to "edit", edit_event_path(event) %> | 
+      </td> 
+      <td>
+        <%= link_to "delete", event, :method => :delete,
+                                   :title => event.date,
+                                   :remote => true %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+

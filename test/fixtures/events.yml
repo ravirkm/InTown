@@ -1,0 +1,32 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  company_id: 1
+  date: 2011-05-27
+  address: MyString
+  coords: MyString
+
+two:
+  company_id: 1
+  date: 2011-05-27
+  address: MyString
+  coords: MyString
+
+
+
+
+# == Schema Information
+#
+# Table name: events
+#
+#  id         :integer         not null, primary key
+#  company_id :integer
+#  date       :string(255)
+#  address    :string(255)
+#  coords     :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#  latitude   :float
+#  longitude  :float
+#
+

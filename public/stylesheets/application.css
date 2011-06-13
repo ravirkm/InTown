@@ -1,0 +1,412 @@
+body {
+  background-color: gray; /*#A00000;  #4B7399; */
+  font-family: Georgia, Garamond, Helvetica, Arial;
+  font-size: 14px;
+}
+
+#paragraph_text {
+  color: blue;
+
+}
+
+a img {
+  border: none;
+}
+
+a {
+  color: #0000FF;
+}
+
+.clear {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+
+#header {
+  /*border: solid 1px blue;  */
+  height: 130px;
+  }
+
+#header_left {
+  /*border: solid 1px green; */
+  
+}
+
+#header_right {
+  /*border: solid 1px blue; */
+}
+	
+#session_status {
+	float: right;
+	/*border: solid 1px black; */
+	}
+
+#searchbar-text {
+  width: 300px;
+  float: left;
+  transform: translate(45px,-5px) scale(1.5);
+	-ms-transform: translate(45px,-5px) scale(1.5); /* IE 9 */
+	-webkit-transform: translate(45px,-5px) scale(1.5); /* Safari and Chrome */
+	-o-transform: translate(45px,-5px) scale(1.5); /* Opera */
+	-moz-transform: translate(45px,-5px) scale(1.5); /* Firefox */
+  }
+
+
+
+
+
+#logo {
+	float: left;
+  
+	/*border: solid 1px black; */
+	}
+
+input.sign_up_field{
+	width: 140px;
+  border-radius:25px;
+  -moz-border-radius:25px; /* Firefox 3.6 and earlier */
+}
+
+#container {
+  /*position: relative;  Delete if causes trouble!*/
+  width: 768px;/*75%;*/
+  margin: 0 auto;
+  background-color: #FFF;
+  padding: 20px 40px;
+  border: solid 1px black;
+  border-radius:25px;
+  -moz-border-radius:25px; /* Firefox 3.6 and earlier */
+  margin-top: 20px;
+}
+
+.ital{
+  font-style: italic;
+  }
+  
+.center {
+  text-align: center;
+}  
+
+.right {
+  text-align: right;
+}  
+
+#flash_notice, #flash_error, #flash_alert {
+  padding: 5px 8px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+#flash_notice {
+  background-color: #CFC;
+  border: solid 1px #6C6;
+}
+
+#flash_error, #flash_alert {
+  background-color: #FCC;
+  border: solid 1px #C66;
+}
+
+.fieldWithErrors {
+  display: inline;
+}
+
+.error_messages {
+  width: 400px;
+  border: 2px solid #CF0000;
+  padding: 0px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  font-size: 12px;
+}
+
+.error_messages h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 10px;
+  font-size: 12px;
+  margin: 0;
+  background-color: #c00;
+  color: #fff;
+}
+
+.error_messages p {
+  margin: 8px 10px;
+}
+
+.error_messages ul {
+  margin: 0;
+}
+
+#bottom_nav
+{
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: auto;
+	margin-top: 50px;
+	border-top: 1px solid #999;
+	z-index: 1;
+}
+
+#bottom_nav ul
+{
+	list-style-type: none;
+	text-align: center;
+	margin-top: -8px;
+	padding: 0;
+	position: relative;
+	z-index: 2;
+}
+
+#bottom_nav li
+{
+	display: inline;
+	text-align: center;
+	margin: 0 5px;
+}
+
+#bottom_nav li a
+{
+	padding: 1px 7px;
+	color: #666;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius:25px;
+	-moz-border-radius:25px; /* Firefox 3.6 and earlier */
+	text-decoration: none;
+}
+
+#bottom_nav li a:hover
+{
+	color: #000;
+	border: 1px solid #A00000;
+	border-top: 2px solid #A00000;
+	border-bottom: 2px solid #A00000;
+}
+
+#top_nav ul
+{
+	transform: translate(20px,80px) scale(1.09);
+	-ms-transform: translate(20px,80px) scale(1.09); /* IE 9 */
+	-webkit-transform: translate(20px,80px) scale(1.09); /* Safari and Chrome */
+	-o-transform: translate(20px,80px) scale(1.09); /* Opera */
+	-moz-transform: translate(20px,80px) scale(1.09); /* Firefox */
+	z-index: 99;
+	margin-left: 0;
+	padding-left: 0;
+	white-space: nowrap;
+}
+
+#top_nav li
+{
+	display: inline;
+	list-style-type: none;
+}
+
+#top_nav a {
+	padding: 6px 15px;
+	margin: 5px 5px;
+ }
+
+#top_nav a:link, #top_nav a:visited
+{
+	color: #fff;
+	background-color: #C00000;
+	text-decoration: none;
+	border: solid 1px black;
+  border-radius:25px;
+  -moz-border-radius:25px; /* Firefox 3.6 and earlier */
+}
+
+#top_nav a:hover
+{
+	color: #fff;
+	background-color: #A00000;
+	text-decoration: none;
+	-webkit-box-shadow: 2px 2px 2px rgba(0,0, 0, 0.4);
+	-moz-box-shadow: 2px 2px 2px rgba(0,0, 0, 0.4);
+	box-shadow: 2px 2px 2px  rgba(0,0, 0, 0.4);
+}
+
+
+table.profile {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+td.main {
+  width: 70%;
+  padding: 1em;
+}
+
+td.sidebar {
+  width: 30%;
+  padding: 1em;
+  vertical-align: top;
+  background: #ffc;
+}
+
+.profile img.gravatar {
+  border: 1px solid #999;
+  margin-bottom: -15px;
+}
+
+.authentications {
+  margin-bottom: 30px;
+}
+
+.authentication {
+  width: 130px;
+  float: left;
+  background-color: #EEE;
+  border: solid 1px #999;
+  padding: 5px 10px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  position: relative;
+  margin-right: 10px;
+}
+
+.authentication .remove {
+  text-decoration: none;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  color: #333;
+  padding: 2px 4px;
+  font-size: 10px;
+}
+
+.authentication .remove:hover {
+  color: #CCC;
+  background-color: #777;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+}
+
+.authentication img {
+  float: left;
+  margin-right: 10px;
+}
+
+.authentication .provider {
+  font-weight: bold;
+}
+
+.authentication .uid {
+  color: #666;
+  font-size: 11px;
+}
+
+.auth_provider img {
+  display: block;
+}
+
+.auth_provider :hover{
+  transform:  scale(1.09);
+	-ms-transform: scale(1.1); /* IE 9 */
+	-webkit-transform: scale(1.1); /* Safari and Chrome */
+	-o-transform: scale(1.1); /* Opera */
+	-moz-transform: scale(1.1); /* Firefox */
+
+}
+
+
+.auth_provider {
+  float: left;
+  text-decoration: none;
+  margin-right: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#content {
+ /*border: dashed 2px blue;*/
+
+
+}
+
+#register {
+  position: relative;
+  height: 500px;
+  /*border: dashed 2px green;*/
+}
+
+
+#sign_up_form {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  /*border: dashed 2px red;*/
+   border: solid 1px black;
+  width: 255px;
+  padding: 5px 10px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -webkit-box-shadow: 2px 2px 2px rgba(0,0, 0, 0.4);
+  -moz-box-shadow: 2px 2px 2px rgba(0,0, 0, 0.4);
+  box-shadow: 2px 2px 2px  rgba(0,0, 0, 0.4);
+}
+
+#or {
+  position: absolute;
+  top: 0px;
+  left: 290px;
+  /*border: dashed 2px red;*/
+  width: 25px;
+}
+
+
+#services {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  border: solid 1px black;
+  width: 400px;
+  padding: 5px 10px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -webkit-box-shadow: 2px 2px 2px rgba(0,0, 0, 0.4);
+  -moz-box-shadow: 2px 2px 2px rgba(0,0, 0, 0.4);
+  box-shadow: 2px 2px 2px  rgba(0,0, 0, 0.4);
+}
+
+#edit_page {
+  position: relative;
+  height: 560px;
+  /*border: dashed 2px green;*/
+}
+
+#edit_account_form {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  /*border: dashed 2px red;*/
+   border: solid 1px black;
+  width: 255px;
+  padding: 5px 10px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -webkit-box-shadow: 2px 2px 2px rgba(0,0, 0, 0.4);
+  -moz-box-shadow: 2px 2px 2px rgba(0,0, 0, 0.4);
+  box-shadow: 2px 2px 2px  rgba(0,0, 0, 0.4);
+}
+
+#edit_authentications {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  border: solid 1px black;
+  width: 400px;
+  padding: 5px 10px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -webkit-box-shadow: 2px 2px 2px rgba(0,0, 0, 0.4);
+  -moz-box-shadow: 2px 2px 2px rgba(0,0, 0, 0.4);
+  box-shadow: 2px 2px 2px  rgba(0,0, 0, 0.4);
+
+
+
+}

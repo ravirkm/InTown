@@ -1,0 +1,18 @@
+<p> REMINDER </p>
+<p><%= @user.name %>,</p>
+<p><%= @company.company_name %> is having an event at <%= @event.address %> on <%= @event.date %>! </p>
+<% ll = "#{@lat},#{@long}" %>
+<hr>
+<% link_url = "http://maps.google.com/maps?f=d&source=s_d&saddr=" + ll + "&daddr=" + @event.address + "&hl=en&ie=UTF8&t=h" %>
+<% image_url = "http://www.google.com/maps/api/staticmap?center=" + @midpoint.gsub(' ','') + "&size=450x250&markers=color:blue%7C" + ll + "&markers=color:green%7C" + @event.address + "&sensor=false" %>
+<%= link_to (image_tag image_url), link_url %>
+<hr>
+
+<%= link_to "Get Directions", link_url %>
+<hr>
+<p> Visit <%= link_to "EventAlerts!", @url %>
+<hr>
+<p> Here is some extra text in a more conversational form. Lately, a lot of my Gmail messages have been mistakenly bounced by Google because they looked like spam. I'm not sure if this will help, but hopefully now that there is more content in the messages, they won't get flagged as spam. </p> 
+<p> Sincerely,<br/> Dominick </p>
+
+

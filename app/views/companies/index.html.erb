@@ -1,0 +1,12 @@
+<h1>Search Results</h1>
+<% if @companies.first.nil? %>
+<p> No companies match your search request; please try check your spelling or try a different company. </p>
+<% else %>
+<%= will_paginate %>
+
+<ul class="companies">
+  <%= render @companies %>
+</ul>
+
+<%= will_paginate %>
+<% end %>

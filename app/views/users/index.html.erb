@@ -1,0 +1,12 @@
+<h1> All Users </h1>
+<% if user_signed_in? %>
+<%= will_paginate %>
+
+<ul class="users">
+  <%= render @users %>
+</ul>
+
+<%= will_paginate %>
+<% else %>
+ <p> You don't have permission to view this page! </p>
+<% end %>
