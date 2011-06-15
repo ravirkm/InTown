@@ -2267,3 +2267,25 @@ Rendered /home/apeiron/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/actio
   [1m[35mRemoteUser Load (0.9ms)[0m  SELECT "remote_users".* FROM "remote_users" LIMIT 1
   [1m[36mRemoteUser Load (0.8ms)[0m  [1mSELECT "remote_users".* FROM "remote_users" LIMIT 1[0m
   [1m[35mRemoteUser Load (0.8ms)[0m  SELECT "remote_users".* FROM "remote_users" LIMIT 1
+
+
+Started GET "/remote_users/new" for 127.0.0.1 at 2011-06-15 01:32:48 -0500
+  Processing by RemoteUsersController#new as HTML
+  [1m[35mSQL (2.5ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"remote_users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+Rendered users/sessions/_login.html.erb (11.0ms)
+Rendered remote_users/new.html.erb within layouts/application (420.2ms)
+Completed 200 OK in 598ms (Views: 450.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-15 01:32:56 -0500
+  Processing by PagesController#home as HTML
+Rendered registrations/_sign_up.html.erb (13.8ms)
+Rendered shared/_services.html.erb (10.1ms)
+Rendered users/sessions/_login.html.erb (10.7ms)
+Rendered pages/home.html.erb within layouts/application (83.7ms)
+Completed 200 OK in 433ms (Views: 101.5ms | ActiveRecord: 0.0ms)
