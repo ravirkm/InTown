@@ -10,15 +10,13 @@ class RemoteUsersController < ApplicationController
         if @remote_user.nil? # This email hasn't been used on a remote form before
           @remote_user = RemoteUser.create(params[:remote_user])
         end
-      
-        else
-          @remote_user.follow!(@company)
-        end
+        @remote_user.follow!(@company)
       else # This email is registered to a full user
         @user.follow!(@company) 
       end
     else
       puts 'no such company, we need to register this company!'
     end
-    
+  end
+  
 end

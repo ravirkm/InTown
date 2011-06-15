@@ -21,7 +21,7 @@ EventAlert::Application.routes.draw do
     get "sign_up", :to => "registrations#new"
   end
   
-  get "remote_users/link"
+  match 'remote_users/link' => 'remote_users#link'
   
   get "pages/home"
 
