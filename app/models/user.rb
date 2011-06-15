@@ -9,9 +9,8 @@ class User < ActiveRecord::Base
   
   # Setup accessible (or protected) attributes for your model
   attr_accessor :prototype_key
-  attr_accessible :email, :password, :password_confirmation, 
-									:remember_me, :address, :name,
-									:prototype_key, :radius
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :address, :name,
+		  :prototype_key, :radius
   
   has_many :authentications, :dependent => :destroy
   has_many :relationships, :dependent => :destroy
@@ -63,27 +62,28 @@ class User < ActiveRecord::Base
   end
     
   def following?(company)
-		if relationships.find_by_company_id(company.id).nil?
-			return false
-		else
-			return true
-		end
-	end
-	def follow!(company)
-  	unless self.following?(company)
-	  	relationships.create!(:company_id => company.id)
-  	end
-	end
+    if relationships.find_by_company_id(company.id).nil?
+      return false
+    else
+      return true
+    end
+  end
+  
+  def follow!(company)
+    unless self.following?(company)
+      relationships.create!(:company_id => company.id)
+    end
+  end
 		
-	def num_following
-		return self.companies.all.size
-	end
+  def num_following
+    return self.companies.all.size
+  end
 
 	
-	def unfollow!(company)
-		if self.following?(company)
-			relationships.find_by_company_id(company).destroy
-		end
+  def unfollow!(company)
+    if self.following?(company)
+      relationships.find_by_company_id(company).destroy
+    end
   end
   
   

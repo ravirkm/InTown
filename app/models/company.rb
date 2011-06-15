@@ -19,15 +19,15 @@ class Company < ActiveRecord::Base
   has_many :users, :through => :relationships
   validates :company_name, :presence => true, :length => { :maximum => 50 }
   validates :contact_name, :presence => true, :length => { :maximum => 30 }
-	validate :verify_prototype_key
+  validate :verify_prototype_key
 	
-	def self.search(search)
-		if search
-			find(:all, :conditions => ['company_name LIKE ?', "%#{search}%"])
-		else
-			find(:all)
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['company_name LIKE ?', "%#{search}%"])
+    else
+     find(:all)
+    end
   end
-end
 	
 	
     def verify_prototype_key
