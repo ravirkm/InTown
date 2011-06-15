@@ -4,7 +4,7 @@ class RemoteUsersController < ApplicationController
     @remote_user = RemoteUser.new
   end
   
-  def post
+  def create
     @email = (params[:remote_user][:email])
     puts @email
     @company = Company.find_by_company_name(params[:remote_user][:remote_company])

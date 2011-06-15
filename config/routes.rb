@@ -5,6 +5,7 @@ EventAlert::Application.routes.draw do
   match '/auth/:provider/callback' => 'authentications#create'
   match '/auth/failure' => 'authentications#failure'
   resources :users, :only => [:index, :destroy]
+  resources :remote_users, :only => [:new, :create]
   resources :events, :only => [:create, :edit, :update, :destroy, :index]
   resources :authentications, :only => [:create, :failure, :destroy]
   resources :events do
@@ -20,8 +21,6 @@ EventAlert::Application.routes.draw do
     get "sign_in", :to => "devise/sessions#new"
     get "sign_up", :to => "registrations#new"
   end
-  
-  match 'remote_users/link' => 'remote_users#link'
   
   get "pages/home"
 

@@ -1,7 +1,7 @@
 require 'geocoder'
 class RemoteUser < ActiveRecord::Base
   attr_accessor :remote_company
-  attr_accessible :email, :address
+  attr_accessible :email, :address, :remote_company
   has_many :remote_relationships, :dependent => :destroy
   has_many :companies, :through => :remote_relationships 
   validates :email, :presence => true
