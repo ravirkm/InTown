@@ -1,4 +1,9 @@
 class RemoteUsersController < ApplicationController
+  
+  def new
+    @remote_user = RemoteUser.new
+  end
+  
   def post
     @email = (params[:remote_user][:email])
     puts @email

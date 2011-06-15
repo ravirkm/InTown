@@ -1,0 +1,19 @@
+<% title "New Remote User" %>
+<h3> this form doesn't exist</h3>
+
+<%= form_for @user do |f| %>
+  <%= f.error_messages %>
+  
+  <p><%= f.label :email %><br />
+  <%= f.email_field :email %></p>
+      
+  <p><%= f.label :address %> <br/>
+  <%= f.text_field :address  %></p>
+
+  <p><%= f.label :remote_company %> <br/>
+  <%= f.text_field :remote_company  %></p>
+  
+  <p><%= f.submit "Sign up" %></p>
+  
+<% end %>
+
