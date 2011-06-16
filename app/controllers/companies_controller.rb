@@ -11,7 +11,7 @@ class CompaniesController < ApplicationController
   def destroy
    #redirect_to cancel_project_registration_path
     Company.find(params[:id]).destroy
-    flash[:success] = "Company destroyed."
+    flash[:notice] = "Company destroyed."
     redirect_to companies_path
   end
   

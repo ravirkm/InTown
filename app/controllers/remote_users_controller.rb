@@ -49,14 +49,14 @@ class RemoteUsersController < ApplicationController
         redirect_to root_path 
         } 
       format.js {    #What to send back if a remote user signs up on someone else's site
-        render message
+        render :text => message
       }  
     end
   end
   
   def destroy
     RemoteUser.find(params[:id]).destroy
-    flash[:alert] = "Remote user destroyed."
+    flash[:notice] = "Remote user destroyed."
     redirect_to users_path
   end
   
