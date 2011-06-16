@@ -11179,3 +11179,553 @@ Rendered pages/home.html.erb within layouts/application (1408.9ms)
 Completed 200 OK in 2522ms (Views: 1416.6ms | ActiveRecord: 219.2ms)
   [1m[35mUser Load (1.5ms)[0m  SELECT "users".* FROM "users" ORDER BY users.id DESC LIMIT 1
   [1m[36mRemoteUser Load (1.2ms)[0m  [1mSELECT "remote_users".* FROM "remote_users" ORDER BY remote_users.id DESC LIMIT 1[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/apeiron/rails/in_town/config/environment.rb:7)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/apeiron/rails/in_town/config/environment.rb:7)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-16 14:54:41 -0500
+  [1m[36mSQL (14.5ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.5ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.4ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.4ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (40.7ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TIME ZONE
+  Processing by PagesController#home as HTML
+  [1m[36mSQL (125.7ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+Rendered shared/_services.html.erb (8.5ms)
+Rendered shared/_remote_user_signup.html.erb (8.7ms)
+Rendered shared/_sign_up.html.erb (583.1ms)
+Rendered shared/_new_user_form.html.erb (595.4ms)
+Rendered users/sessions/_login.html.erb (21.6ms)
+Rendered pages/home.html.erb within layouts/application (659.1ms)
+Completed 200 OK in 848ms (Views: 708.9ms | ActiveRecord: 182.6ms)
+
+
+Started POST "/d/users/sign_in" for 127.0.0.1 at 2011-06-16 15:11:33 -0500
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hsaAT9J3xYLMbkEUnhW7YXiC5Id0OWJB1vq7EEkh0uk=", "user"=>{"email"=>"admin@intown.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mSQL (23.6ms)[0m   SELECT tablename
+ FROM pg_tables
+ WHERE schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (2.7ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mUser Load (19.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'admin@intown.com' LIMIT 1
+Completed   in 235ms
+  Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hsaAT9J3xYLMbkEUnhW7YXiC5Id0OWJB1vq7EEkh0uk=", "user"=>{"email"=>"admin@intown.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mSQL (3.0ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+Rendered /home/apeiron/.rvm/gems/ruby-1.9.2-p180/gems/devise-1.3.4/app/views/devise/shared/_links.erb (8.7ms)
+Rendered users/sessions/_login.html.erb (15.9ms)
+Rendered users/sessions/new.html.erb within layouts/application (281.9ms)
+Completed 200 OK in 668ms (Views: 315.6ms | ActiveRecord: 49.2ms)
+
+
+Started POST "/d/users/sign_in" for 127.0.0.1 at 2011-06-16 15:11:41 -0500
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hsaAT9J3xYLMbkEUnhW7YXiC5Id0OWJB1vq7EEkh0uk=", "user"=>{"email"=>"admin@intown.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mSQL (3.0ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'admin@intown.com' LIMIT 1[0m
+Completed   in 136ms
+  Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hsaAT9J3xYLMbkEUnhW7YXiC5Id0OWJB1vq7EEkh0uk=", "user"=>{"email"=>"admin@intown.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mSQL (3.0ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+Rendered /home/apeiron/.rvm/gems/ruby-1.9.2-p180/gems/devise-1.3.4/app/views/devise/shared/_links.erb (7.6ms)
+Rendered users/sessions/_login.html.erb (15.8ms)
+Rendered users/sessions/new.html.erb within layouts/application (173.7ms)
+Completed 200 OK in 630ms (Views: 189.6ms | ActiveRecord: 7.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/apeiron/rails/in_town/config/environment.rb:7)
+  [1m[36mSQL (29.1ms)[0m  [1mSET search_path TO public[0m
+  [1m[35mSQL (8.4ms)[0m  SHOW client_min_messages
+  [1m[36mSQL (0.4ms)[0m  [1mSET client_min_messages TO 'panic'[0m
+  [1m[35mSQL (0.4ms)[0m  SET standard_conforming_strings = on
+  [1m[36mSQL (0.3ms)[0m  [1mSET client_min_messages TO 'notice'[0m
+  [1m[35mSQL (1.0ms)[0m  SET time zone 'UTC'
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TIME ZONE[0m
+  [1m[35mSQL (5069.3ms)[0m  DROP DATABASE IF EXISTS "eventalerts_dev"
+PGError: ERROR:  database "eventalerts_dev" is being accessed by other users
+DETAIL:  There are 1 other session(s) using the database.
+: DROP DATABASE IF EXISTS "eventalerts_dev"
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.3ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.3ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.3ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (1.0ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TIME ZONE
+  [1m[36mSQL (10.3ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'authentications'
+ 
+[0m
+  [1m[35mSQL (239.0ms)[0m  DROP TABLE "authentications"
+  [1m[36mSQL (265.3ms)[0m  [1mCREATE TABLE "authentications" ("id" serial primary key, "user_id" integer, "provider" character varying(255), "uid" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (7.6ms)[0m   SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'companies'
+ 
+  [1m[36mSQL (31.5ms)[0m  [1mDROP TABLE "companies"[0m
+  [1m[35mSQL (193.4ms)[0m  CREATE TABLE "companies" ("id" serial primary key, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(128) DEFAULT '' NOT NULL, "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying(255), "last_sign_in_ip" character varying(255), "created_at" timestamp, "updated_at" timestamp, "company_name" character varying(255), "contact_name" character varying(255)) 
+  [1m[36mSQL (1.6ms)[0m  [1mSHOW search_path[0m
+  [1m[35mSQL (17.1ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'companies'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+  [1m[36mSQL (86.8ms)[0m  [1mCREATE UNIQUE INDEX "index_companies_on_email" ON "companies" ("email")[0m
+  [1m[35mSQL (6.2ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'companies'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+  [1m[36mColumns for index index_companies_on_email on companies (11.7ms)[0m  [1m SELECT a.attnum, a.attname
+ FROM pg_attribute a
+ WHERE a.attrelid = 19701
+ AND a.attnum IN (2)
+[0m
+  [1m[35mSQL (71.6ms)[0m  CREATE UNIQUE INDEX "index_companies_on_reset_password_token" ON "companies" ("reset_password_token")
+  [1m[36mSQL (2.4ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'events'
+ 
+[0m
+  [1m[35mSQL (20.7ms)[0m  DROP TABLE "events"
+  [1m[36mSQL (122.3ms)[0m  [1mCREATE TABLE "events" ("id" serial primary key, "company_id" integer, "date" character varying(255), "address" character varying(255), "created_at" timestamp, "updated_at" timestamp, "latitude" float, "longitude" float) [0m
+  [1m[35mSQL (5.1ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'events'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+  [1m[36mSQL (84.1ms)[0m  [1mCREATE INDEX "index_events_on_date" ON "events" ("date")[0m
+  [1m[35mSQL (2.8ms)[0m   SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'relationships'
+ 
+  [1m[36mSQL (21.7ms)[0m  [1mDROP TABLE "relationships"[0m
+  [1m[35mSQL (80.4ms)[0m  CREATE TABLE "relationships" ("id" serial primary key, "user_id" integer, "company_id" integer, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (4.3ms)[0m  [1m SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'relationships'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+[0m
+  [1m[35mSQL (60.5ms)[0m  CREATE INDEX "index_relationships_on_company_id" ON "relationships" ("company_id")
+  [1m[36mSQL (5.1ms)[0m  [1m SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'relationships'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+[0m
+  [1m[35mColumns for index index_relationships_on_company_id on relationships (1.2ms)[0m   SELECT a.attnum, a.attname
+ FROM pg_attribute a
+ WHERE a.attrelid = 19729
+ AND a.attnum IN (3)
+  [1m[36mSQL (66.4ms)[0m  [1mCREATE UNIQUE INDEX "index_relationships_on_user_id_and_company_id" ON "relationships" ("user_id", "company_id")[0m
+  [1m[35mSQL (4.8ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'relationships'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+  [1m[36mColumns for index index_relationships_on_company_id on relationships (1.0ms)[0m  [1m SELECT a.attnum, a.attname
+ FROM pg_attribute a
+ WHERE a.attrelid = 19729
+ AND a.attnum IN (3)
+[0m
+  [1m[35mColumns for index index_relationships_on_user_id_and_company_id on relationships (1.2ms)[0m   SELECT a.attnum, a.attname
+ FROM pg_attribute a
+ WHERE a.attrelid = 19729
+ AND a.attnum IN (2,3)
+  [1m[36mSQL (56.6ms)[0m  [1mCREATE INDEX "index_relationships_on_user_id" ON "relationships" ("user_id")[0m
+  [1m[35mSQL (2.5ms)[0m   SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'remote_relationships'
+ 
+  [1m[36mSQL (19.1ms)[0m  [1mDROP TABLE "remote_relationships"[0m
+  [1m[35mSQL (108.0ms)[0m  CREATE TABLE "remote_relationships" ("id" serial primary key, "remote_user_id" integer, "company_id" integer, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (2.4ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'remote_users'
+ 
+[0m
+  [1m[35mSQL (12.5ms)[0m  DROP TABLE "remote_users"
+  [1m[36mSQL (164.1ms)[0m  [1mCREATE TABLE "remote_users" ("id" serial primary key, "email" character varying(255), "address" character varying(255), "latitude" float, "longitude" float, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (2.9ms)[0m   SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'users'
+ 
+  [1m[36mSQL (28.4ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35mSQL (170.5ms)[0m  CREATE TABLE "users" ("id" serial primary key, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(128) DEFAULT '' NOT NULL, "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying(255), "last_sign_in_ip" character varying(255), "created_at" timestamp, "updated_at" timestamp, "name" character varying(255), "address" character varying(255), "admin" boolean DEFAULT 'f', "latitude" float, "longitude" float, "radius" integer DEFAULT 30) 
+  [1m[36mSQL (4.6ms)[0m  [1m SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'users'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+[0m
+  [1m[35mSQL (60.1ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36mSQL (4.2ms)[0m  [1m SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'users'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+[0m
+  [1m[35mColumns for index index_users_on_email on users (1.0ms)[0m   SELECT a.attnum, a.attname
+ FROM pg_attribute a
+ WHERE a.attrelid = 19759
+ AND a.attnum IN (2)
+  [1m[36mSQL (67.4ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (2.3ms)[0m   SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'schema_migrations'
+ 
+  [1m[36mSQL (17.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35mSQL (2.1ms)[0m   SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'schema_migrations'
+ 
+  [1m[36mSQL (3.4ms)[0m  [1m SELECT tablename
+ FROM pg_tables
+ WHERE schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (3.9ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"schema_migrations"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mSQL (2.8ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (2.9ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.9ms)[0m  SELECT 1 FROM "users" WHERE ("users"."email" = 'admin@intown.com') LIMIT 1
+  [1m[36mSQL (2.7ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mPK and serial sequence (36.2ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"users"'::regclass
+  [1m[36mSQL (2.9ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "created_at", "updated_at", "name", "address", "admin", "latitude", "longitude", "radius") VALUES ('admin@intown.com', '$2a$10$Na7EPxjA81WM3fRz/Gq4TOr7YaYM5lt79HpAjatvmX.wl7igEsSKK', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2011-06-16 20:13:04.427367', '2011-06-16 20:13:04.427367', 'admin', 'N/A', 'f', 69.051356, 15.871304, 30) RETURNING "id"[0m
+  [1m[35mSQL (7.8ms)[0m  COMMIT
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (1.5ms)[0m  UPDATE "users" SET "admin" = 't', "updated_at" = '2011-06-16 20:13:04.549388' WHERE "users"."id" = 1
+  [1m[36mSQL (7.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (2.7ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"companies"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  SELECT 1 FROM "companies" WHERE ("companies"."email" = 'thom@radiohead.com') LIMIT 1
+  [1m[36mSQL (2.5ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"companies"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mPK and serial sequence (9.4ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"companies"'::regclass
+  [1m[36mSQL (2.4ms)[0m  [1mINSERT INTO "companies" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "created_at", "updated_at", "company_name", "contact_name") VALUES ('thom@radiohead.com', '$2a$10$0cgYrOKAwtX0P1Ft8z0zpefFXRoBtSJd3bIoyxF2IrckHoDR.WN3q', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2011-06-16 20:13:04.934129', '2011-06-16 20:13:04.934129', 'Radiohead', 'Thom Yorke') RETURNING "id"[0m
+  [1m[35mSQL (7.9ms)[0m  COMMIT
+  [1m[36mSQL (2.3ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"events"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mSQL (0.3ms)[0m  BEGIN
+  [1m[36mSQL (2.2ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"events"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mPK and serial sequence (12.1ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"events"'::regclass
+  [1m[36mSQL (2.5ms)[0m  [1mINSERT INTO "events" ("company_id", "date", "address", "created_at", "updated_at", "latitude", "longitude") VALUES (1, '2011-06-16', '413 4th Ave, Collins, IA 50055', '2011-06-16 20:13:15.428193', '2011-06-16 20:13:15.428193', 41.903052, -93.303645) RETURNING "id"[0m
+  [1m[35mSQL (18.1ms)[0m  COMMIT
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.8ms)[0m  INSERT INTO "events" ("company_id", "date", "address", "created_at", "updated_at", "latitude", "longitude") VALUES (1, '2011-06-17', '413 4th Ave, Collins, IA 50055', '2011-06-16 20:13:26.315896', '2011-06-16 20:13:26.315896', 41.903052, -93.303645) RETURNING "id"
+  [1m[36mSQL (21.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  BEGIN
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "events" ("company_id", "date", "address", "created_at", "updated_at", "latitude", "longitude") VALUES (1, '2011-06-18', '413 4th Ave, Collins, IA 50055', '2011-06-16 20:13:36.675947', '2011-06-16 20:13:36.675947', 41.903052, -93.303645) RETURNING "id"[0m
+  [1m[35mSQL (19.7ms)[0m  COMMIT
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "events" ("company_id", "date", "address", "created_at", "updated_at", "latitude", "longitude") VALUES (1, '2011-06-19', '413 4th Ave, Collins, IA 50055', '2011-06-16 20:13:47.226732', '2011-06-16 20:13:47.226732', 41.903052, -93.303645) RETURNING "id"
+  [1m[36mSQL (21.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  BEGIN
+  [1m[36mSQL (1.2ms)[0m  [1mSELECT 1 FROM "companies" WHERE ("companies"."email" = 'lilwayne@youngmoney.net') LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "companies" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "created_at", "updated_at", "company_name", "contact_name") VALUES ('lilwayne@youngmoney.net', '$2a$10$TorPJ2SX/ABKRFyhZY3iAOM23rM2TJF0huEnq0FesdC7aV26BaL.6', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2011-06-16 20:13:47.680745', '2011-06-16 20:13:47.680745', 'Lil Wayne', 'Lil Wayne') RETURNING "id"
+  [1m[36mSQL (4.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "events" ("company_id", "date", "address", "created_at", "updated_at", "latitude", "longitude") VALUES (2, '2011-06-16', '1426 1st Avenue, Seattle, WA', '2011-06-16 20:13:58.087146', '2011-06-16 20:13:58.087146', 47.608464, -122.339685) RETURNING "id"[0m
+  [1m[35mSQL (12.7ms)[0m  COMMIT
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "events" ("company_id", "date", "address", "created_at", "updated_at", "latitude", "longitude") VALUES (2, '2011-06-17', '1426 1st Avenue, Seattle, WA', '2011-06-16 20:14:12.481441', '2011-06-16 20:14:12.481441', 47.608464, -122.339685) RETURNING "id"
+  [1m[36mSQL (19.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  BEGIN
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "events" ("company_id", "date", "address", "created_at", "updated_at", "latitude", "longitude") VALUES (2, '2011-06-18', '1426 1st Avenue, Seattle, WA', '2011-06-16 20:14:22.892859', '2011-06-16 20:14:22.892859', 47.608464, -122.339685) RETURNING "id"[0m
+  [1m[35mSQL (14.4ms)[0m  COMMIT
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "events" ("company_id", "date", "address", "created_at", "updated_at", "latitude", "longitude") VALUES (2, '2011-06-19', '1426 1st Avenue, Seattle, WA', '2011-06-16 20:14:37.250015', '2011-06-16 20:14:37.250015', 47.608464, -122.339685) RETURNING "id"
+  [1m[36mSQL (13.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "events" ("company_id", "date", "address", "created_at", "updated_at", "latitude", "longitude") VALUES (2, '2011-06-20', '1426 1st Avenue, Seattle, WA', '2011-06-16 20:14:51.649476', '2011-06-16 20:14:51.649476', 47.608464, -122.339685) RETURNING "id"[0m
+  [1m[35mSQL (13.4ms)[0m  COMMIT
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  SELECT 1 FROM "companies" WHERE ("companies"."email" = 'jd@mgs.net') LIMIT 1
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "companies" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "created_at", "updated_at", "company_name", "contact_name") VALUES ('jd@mgs.net', '$2a$10$aer9EZd00tAsSWTjNPQ64u14CjpOh681oyZncBEXMgrOe/g6CBn1a', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2011-06-16 20:14:51.987230', '2011-06-16 20:14:51.987230', 'The Mountain Goats', 'John Darnielle') RETURNING "id"[0m
+  [1m[35mSQL (49.9ms)[0m  COMMIT
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+
+
+Started POST "/d/users/sign_in" for 127.0.0.1 at 2011-06-16 15:15:02 -0500
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hsaAT9J3xYLMbkEUnhW7YXiC5Id0OWJB1vq7EEkh0uk=", "user"=>{"email"=>"admin@intown.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "events" ("company_id", "date", "address", "created_at", "updated_at", "latitude", "longitude") VALUES (3, '2011-06-16', 'Claremont, CA 91711', '2011-06-16 20:15:02.367094', '2011-06-16 20:15:02.367094', 34.0961, -117.716404) RETURNING "id"
+  [1m[36mSQL (14.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.4ms)[0m  BEGIN
+  [1m[36mSQL (7.3ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mUser Load (2.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'admin@intown.com' LIMIT 1
+  [1m[36mSQL (3.8ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mSQL (0.3ms)[0m  BEGIN
+  [1m[36mAREL (2.1ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2011-06-16 20:15:03.042953', "current_sign_in_at" = '2011-06-16 20:15:03.042953', "last_sign_in_ip" = '127.0.0.1', "current_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2011-06-16 20:15:03.045562' WHERE "users"."id" = 1[0m
+  [1m[35mSQL (6.8ms)[0m  COMMIT
+Redirected to http://127.0.0.1:3001/
+Completed 302 Found in 1087ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-16 15:15:03 -0500
+  Processing by PagesController#home as HTML
+  [1m[36mSQL (3.7ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mSQL (3.2ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered shared/_searchbar.html.erb (7.1ms)
+Rendered pages/home.html.erb within layouts/application (49.3ms)
+Completed 200 OK in 618ms (Views: 85.9ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-06-16 15:15:09 -0500
+  Processing by UsersController#index as HTML
+  [1m[35mSQL (4.1ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (3.1ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 30 OFFSET 0[0m
+  [1m[35mRemoteUser Load (1.5ms)[0m  SELECT "remote_users".* FROM "remote_users" LIMIT 30 OFFSET 0
+Rendered users/_user.html.erb (16.0ms)
+Rendered collection (0.0ms)
+Rendered shared/_searchbar.html.erb (13.6ms)
+Rendered users/index.html.erb within layouts/application (80.9ms)
+Completed 200 OK in 753ms (Views: 151.4ms | ActiveRecord: 11.2ms)
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "events" ("company_id", "date", "address", "created_at", "updated_at", "latitude", "longitude") VALUES (3, '2011-06-17', 'Claremont, CA 91711', '2011-06-16 20:15:12.847743', '2011-06-16 20:15:12.847743', 34.0961, -117.716404) RETURNING "id"[0m
+  [1m[35mSQL (12.4ms)[0m  COMMIT
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "events" ("company_id", "date", "address", "created_at", "updated_at", "latitude", "longitude") VALUES (3, '2011-06-18', 'Claremont, CA 91711', '2011-06-16 20:15:23.186858', '2011-06-16 20:15:23.186858', 34.0961, -117.716404) RETURNING "id"
+  [1m[36mSQL (12.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "events" ("company_id", "date", "address", "created_at", "updated_at", "latitude", "longitude") VALUES (3, '2011-06-19', 'Claremont, CA 91711', '2011-06-16 20:15:33.529431', '2011-06-16 20:15:33.529431', 34.0961, -117.716404) RETURNING "id"[0m
+  [1m[35mSQL (10.4ms)[0m  COMMIT
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "events" ("company_id", "date", "address", "created_at", "updated_at", "latitude", "longitude") VALUES (3, '2011-06-20', 'Claremont, CA 91711', '2011-06-16 20:15:51.869224', '2011-06-16 20:15:51.869224', 34.0961, -117.716404) RETURNING "id"
+  [1m[36mSQL (20.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mSELECT 1 FROM "companies" WHERE ("companies"."email" = 'lady@gaga.net') LIMIT 1[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "companies" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "created_at", "updated_at", "company_name", "contact_name") VALUES ('lady@gaga.net', '$2a$10$WcxwLBG2GQrufl6nlhEYy.AtcveCZRswFiUeabbUnuggbDTHGrtwi', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2011-06-16 20:15:52.177515', '2011-06-16 20:15:52.177515', 'Lady Gaga', 'Lady Gaga') RETURNING "id"
+  [1m[36mSQL (3.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "events" ("company_id", "date", "address", "created_at", "updated_at", "latitude", "longitude") VALUES (4, '2011-06-16', '1260 Avenue of the Americas, New York, NY 10020', '2011-06-16 20:16:02.720951', '2011-06-16 20:16:02.720951', 40.75998, -73.980365) RETURNING "id"[0m
+  [1m[35mSQL (66.9ms)[0m  COMMIT
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "events" ("company_id", "date", "address", "created_at", "updated_at", "latitude", "longitude") VALUES (4, '2011-06-17', '1260 Avenue of the Americas, New York, NY 10020', '2011-06-16 20:16:13.273842', '2011-06-16 20:16:13.273842', 40.75998, -73.980365) RETURNING "id"
+  [1m[36mSQL (20.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  BEGIN
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "events" ("company_id", "date", "address", "created_at", "updated_at", "latitude", "longitude") VALUES (4, '2011-06-18', '1260 Avenue of the Americas, New York, NY 10020', '2011-06-16 20:16:23.635672', '2011-06-16 20:16:23.635672', 40.75998, -73.980365) RETURNING "id"[0m
+  [1m[35mSQL (16.8ms)[0m  COMMIT
+  [1m[36mSQL (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "events" ("company_id", "date", "address", "created_at", "updated_at", "latitude", "longitude") VALUES (4, '2011-06-19', '1260 Avenue of the Americas, New York, NY 10020', '2011-06-16 20:16:34.035313', '2011-06-16 20:16:34.035313', 40.75998, -73.980365) RETURNING "id"
+  [1m[36mSQL (23.8ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/users" for 127.0.0.1 at 2011-06-16 15:54:04 -0500
+  Processing by UsersController#index as HTML
+  [1m[36mSQL (3.1ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mSQL (6.3ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" LIMIT 30 OFFSET 0
+  [1m[36mRemoteUser Load (0.8ms)[0m  [1mSELECT "remote_users".* FROM "remote_users" LIMIT 30 OFFSET 0[0m
+Rendered users/_user.html.erb (9.5ms)
+Rendered collection (0.0ms)
+Rendered shared/_searchbar.html.erb (4.3ms)
+Rendered users/index.html.erb within layouts/application (172.5ms)
+Completed 200 OK in 585ms (Views: 193.4ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-06-16 15:55:03 -0500
+  Processing by UsersController#index as HTML
+  [1m[35mSQL (3.2ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (3.1ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 30 OFFSET 0[0m
+  [1m[35mRemoteUser Load (0.7ms)[0m  SELECT "remote_users".* FROM "remote_users" LIMIT 30 OFFSET 0
+Rendered users/_user.html.erb (9.1ms)
+Rendered collection (0.0ms)
+Rendered shared/_searchbar.html.erb (4.4ms)
+Rendered users/index.html.erb within layouts/application (45.7ms)
+Completed 200 OK in 450ms (Views: 65.1ms | ActiveRecord: 9.7ms)

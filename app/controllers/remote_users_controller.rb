@@ -31,27 +31,32 @@ class RemoteUsersController < ApplicationController
         if @remote_user.nil? # This email hasn't been used on a remote form before
           @remote_user = RemoteUser.create(params[:remote_user])
           @remote_user.follow!(@company)
-          flash[:notice] = "Remote user created."
-          redirect_to root_path
+          message = "Remote user created."
         else
           @remote_user.follow!(@company)
-          flash[:notice] = "Remote user is following a new company."
-          redirect_to root_path
+          message = "Remote user following a new company!"
         end
       else # This email is registered to a full user
         @user.follow!(@company) 
-        flash[:notice] = "Full user is following a new company."
-        redirect_to root_path
+        message = "Full user following a new company!"
       end
     else
-      flash[:error] = 'no such company, we need to register this company!'
-      redirect_to root_path
+      message = "Remote user following a new company!"
+    end
+    respond_to do |format|
+      format.html {    #If remote user signs up on our site DOESNT HAPPEN IN PRODUCTION!
+        flash[:alert] = message
+        redirect_to root_path 
+        } 
+      format.js {    #What to send back if a remote user signs up on someone else's site
+        render :json => message
+      }  
     end
   end
   
   def destroy
     RemoteUser.find(params[:id]).destroy
-    flash[:success] = "Remote user destroyed."
+    flash[:alert] = "Remote user destroyed."
     redirect_to users_path
   end
   
