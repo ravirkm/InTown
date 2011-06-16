@@ -49,7 +49,7 @@ class RemoteUsersController < ApplicationController
         redirect_to root_path 
         } 
       format.js {    #What to send back if a remote user signs up on someone else's site
-        render :json => message
+        render message
       }  
     end
   end
