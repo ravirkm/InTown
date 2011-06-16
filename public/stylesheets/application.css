@@ -13,6 +13,8 @@ a img {
   border: none;
 }
 
+
+
 a {
   color: #0000FF;
 }
@@ -22,6 +24,9 @@ a {
   height: 0;
   overflow: hidden;
 }
+
+.center { text-align: center; }
+
 
 #header {
   /*border: solid 1px blue;  */
@@ -372,6 +377,21 @@ td.sidebar {
   -moz-box-shadow: 2px 2px 2px rgba(0,0, 0, 0.4);
   box-shadow: 2px 2px 2px  rgba(0,0, 0, 0.4);
 }
+
+#remote_user_signup {
+  position: absolute;
+  top: 295px;
+  right: 0px;
+  border: solid 1px black;
+  width: 400px;
+  padding: 5px 10px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -webkit-box-shadow: 2px 2px 2px rgba(0,0, 0, 0.4);
+  -moz-box-shadow: 2px 2px 2px rgba(0,0, 0, 0.4);
+  box-shadow: 2px 2px 2px  rgba(0,0, 0, 0.4);
+}
+
 
 #edit_page {
   position: relative;

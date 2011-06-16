@@ -1,0 +1,6 @@
+	<h3>If you have registered for EventAlerts on a different website, type your email below!</h3>
+  <%= form_for("remote_user", :url => remote_users_transform_path) do |f| %>
+		<%= f.label :email %> <br/>
+    <%= f.text_field :email  %><br/>
+		<%= f.submit 'Create your Account!' %> </br>
+  <% end %>

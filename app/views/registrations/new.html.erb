@@ -1,48 +1,4 @@
-<% title "Complete your registration" %>
-<div id="register">
-<% if current_user.nil? and current_company.nil? %>
-  <div id="edit_account_form">
-    <% unless @user.password_required? %>
-      <h3> Please fill in the following fields to complete your registration with EventAlerts! </h3>
-    <% else %>
 
-    <% end %>
-    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
-      <p><%= f.label :full_name %><br />
-      <%= f.text_field :name %></p>
+<%= render 'shared/new_user_form' %>
 
-      <p><%= f.label :email %><br />
-      <%= f.email_field :email %></p>
-      
-      <p><%= f.label :address %> <br/>
-      <%= f.text_field :address  %></p>
 
-    <% if @user.password_required? %>
-      <p><%= f.label :password %><br />
-      <%= f.password_field :password %></p>
-
-      <p><%= f.label :confirm_password %><br />
-      <%= f.password_field :password_confirmation %></p>
-    <% end %>
-      <p><%= f.label :prototype_key %> <br/>
-      <%= f.text_field :prototype_key  %></p>
-
-      <p><%= f.submit "Sign up" %></p>
-    <% end %>
-    <% if @user.password_required? %>
-      <%= render :partial => "devise/shared/links" %>
-    <% end %>
-  </div>
-  <div id="services">
-   <h3> If you already have an account on EventAlerts, use the login form above. </h3> 
-  </div>
-
-<% elsif company_signed_in? %>
-  <h2>Sign up</h2>
-  <h3> Your company is already registered! Please <%= link_to 'click here', '/' %> to go to
-	  your company's EventAlerts homepage! </h3>  
-<% else %>
-	<h3> You are already signed up! </h3>
-<% end %>
-</div>

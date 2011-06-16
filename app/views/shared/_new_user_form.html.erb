@@ -1,0 +1,17 @@
+<div id='register'>
+<% if current_user.nil? and current_company.nil? %>
+  <% if session[:unreg_user] %>
+    <% title "Complete your registration" %>
+    <%= render :partial => "shared/sign_up_remote_user" %> 
+  <% elsif session[:omniauth] %>
+    <p> Twitter Auth </p>
+    <% title "Complete your registration" %>
+    <%= render :partial => "shared/sign_up_after_auth" %>
+  <% else %>
+  <% title = "Sign up!" %>
+    <%= render :partial => "shared/sign_up" %>
+  <% end %>
+<% else %>
+  <p> Already signed in! </p>
+<% end %>
+</div>

@@ -45,18 +45,7 @@
   <br/>
 
 <% else %>
-	<div id=register>
-		<% title "Sign Up" %>
-		<div id="sign_up_form">
-			<%= render :partial => "registrations/sign_up" %>
-		</div>
-		<div id="or">
-			<h2> Or: <h2>
-		</div>
-		<div id="services">
-			<%= render :partial => "shared/services" %>
-		</div>
-  </div>
+  <%= render 'shared/new_user_form' %>
 <% end %>
 
 

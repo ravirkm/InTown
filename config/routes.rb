@@ -4,8 +4,10 @@ EventAlert::Application.routes.draw do
 
   match '/auth/:provider/callback' => 'authentications#create'
   match '/auth/failure' => 'authentications#failure'
+  match '/remote_users/transform' => 'remote_users#transform'
+  
   resources :users, :only => [:index, :destroy]
-  resources :remote_users, :only => [:new, :create]
+  resources :remote_users, :only => [:new, :create, :destroy]
   resources :events, :only => [:create, :edit, :update, :destroy, :index]
   resources :authentications, :only => [:create, :failure, :destroy]
   resources :events do

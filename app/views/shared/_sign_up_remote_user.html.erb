@@ -1,0 +1,33 @@
+ <div id="edit_account_form">
+	<%= form_for('user', :url => user_registration_path) do |f| %>
+	  <% if @user.errors.any? %>  
+      <div id="errorExplanation">  
+        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>  
+        <ul>  
+          <% @user.errors.full_messages.each do |msg| %>  
+            <li><%= msg %></li>  
+          <% end %>  
+        </ul>  
+      </div>  
+    <% end %> 
+		<p><%= f.label :full_name %><br />
+		<%= f.text_field :name, :class => "text_input" %></p>
+
+		<p><%= f.label :email %><br />
+		<%= f.email_field :email, :value => session[:unreg_user][:email] %></p>
+		
+		<p><%= f.label :address %><br />
+		<%= f.text_field :address, :value => session[:unreg_user][:address] %></p>
+		
+		<p><%= f.label :password %><br />
+		<%= f.password_field :password %></p>
+
+		<p><%= f.label :confirm_password %><br />
+		<%= f.password_field :password_confirmation %></p>
+		
+		<p><%= f.label :prototype_key %> <br/>
+		<%= f.text_field :prototype_key  %></p>
+
+		<p><%= f.submit "Sign up" %></p>
+	<% end %>
+</div>

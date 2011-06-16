@@ -10,7 +10,6 @@ class RemoteUser < ActiveRecord::Base
   after_validation :geocode  
   
   
-  
   def following?(company)
     if remote_relationships.find_by_company_id(company.id).nil?
       return false

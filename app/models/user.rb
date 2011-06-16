@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
   after_validation :geocode          # auto-fetch coordinates
 
 
-
+   
   def verify_prototype_key
 	  if self.sign_in_count == 0
       errors.add(:prototype_key, "is invalid") if
@@ -35,6 +35,12 @@ class User < ActiveRecord::Base
 		self.email = omniauth['user_info']['email'] if email.blank?
 		authentications.build(:provider => omniauth['provider'], :uid => omniauth['uid'])
   end
+  
+  def build_from_remote(remote_user)
+    self.email = remote_user[:email]
+    self.address = remote_user[:address]
+  end
+  
   
   def password_required?
     (authentications.empty? || !password.blank?) && super

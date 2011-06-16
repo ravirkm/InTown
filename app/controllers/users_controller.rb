@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
  before_filter :admin_user, :only => [ :destroy, :index]
  
- 
+  
  
  def index
     @title = "All users"
     @users = User.paginate(:page => params[:page])
+    @remote_users = RemoteUser.paginate(:page => params[:page])
   end
   
   def destroy

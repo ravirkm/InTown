@@ -1,9 +1,17 @@
-<% unless true %>
 <% title "New Remote User" %>
 <h3> this form doesn't exist</h3>
 
 <%= form_for (@remote_user) do |f| %>
-  <%= f.error_messages %>
+  <% if @remote_user.errors.any? %>  
+      <div id="errorExplanation">  
+        <h2><%= pluralize(@remote_user.errors.count, "error") %> prohibited this user from being saved:</h2>  
+        <ul>  
+          <% @remote_user.errors.full_messages.each do |msg| %>  
+            <li><%= msg %></li>  
+          <% end %>  
+        </ul>  
+      </div>  
+    <% end %> 
   
   <p><%= f.label :email %><br />
   <%= f.email_field :email %></p>
@@ -18,7 +26,7 @@
   
 <% end %>
 
-<% else %>
 
-<p> you shouldn't be here </p>
-<% end %>
+
+
+

@@ -1,0 +1,9 @@
+<li>
+  <%= remote_user.email %>
+  <% if user_signed_in?  %>
+    <% if current_user.admin? %>
+      | <%= link_to "delete", remote_user, :method => :delete, :confirm => "You sure?",
+                                :title => "Delete #{remote_user.email}" %>
+    <% end %>
+  <% end %>
+</li>
