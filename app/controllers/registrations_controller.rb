@@ -7,13 +7,13 @@ class RegistrationsController < Devise::RegistrationsController
     if session[:unreg_user]
       @remote_user = RemoteUser.find_by_email(session[:unreg_user][:email])
       @user.address = @remote_user.address
-        for c in @remote_user.companies
-          @user.relationships.create(:company_id => c.id)
-        end
+      for c in @remote_user.companies
+        @user.relationships.create(:company_id => c.id)
+      end
       @user.save
       @remote_user.destroy #remove for debugging
       session[:unreg_user] = nil
-      end
+    end
   end
   
   def edit
