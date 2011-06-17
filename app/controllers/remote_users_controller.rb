@@ -29,28 +29,59 @@ class RemoteUsersController < ApplicationController
       if @user.nil? # This email is not registered to a full user on the site
         @remote_user = RemoteUser.find_by_email(@email)
         if @remote_user.nil? # This email hasn't been used on a remote form before
-          @remote_user = RemoteUser.create(params[:remote_user])
-          @remote_user.follow!(@company)
-          message = "Remote user created."
+          @remote_user = RemoteUser.new(params[:remote_user])
+          if @remote_user.save
+            @remote_user.follow!(@company)
+            message = "Remote user created."
+            response = "success"
+          else
+            message = "Remote user NOT created."
+            response = "failure"
+          end
         else
-          @remote_user.follow!(@company)
-          message = "Remote user following a new company!"
+          @remote_user.address = params[:remote_user][:address]
+          if @remote_user.save
+            @remote_user.follow!(@company)
+            message = "Remote user updated."
+            response = "success"
+          else
+            message = "Remote user NOT updated."
+            response = "failure"
+          end
         end
       else # This email is registered to a full user
-        @user.follow!(@company) 
-        message = "Full user following a new company!"
+        @user.address = params[:remote_user][:address]
+        if @user.save
+          @user.follow!(@company)
+          message = "Full user updated."
+          response = "success"
+        else
+          message = "Full user NOT updated."
+          response = "failure"
+        end
       end
     else
-      message = "Remote user following a new company!"
+      message = "Company not registered!"
+      response = "failure"
     end
     respond_to do |format|
-      format.html {    #If remote user signs up on our site DOESNT HAPPEN IN PRODUCTION!
-        flash[:alert] = message
-        redirect_to root_path 
-        } 
-      format.js {    #What to send back if a remote user signs up on someone else's site
-        render :text => message
-      }  
+      if response == "success"
+        format.html {    #If remote user signs up on our site DOESNT HAPPEN IN PRODUCTION!
+          flash[:notice] = message
+          redirect_to root_path 
+          } 
+        format.js {    #What to send back if a remote user signs up on someone else's site
+          #render :text => message
+        }
+      else
+        format.html {    #If remote user signs up on our site DOESNT HAPPEN IN PRODUCTION!
+          flash[:error] = message
+          redirect_to new_remote_user_path
+          } 
+        format.js {    #What to send back if a remote user signs up on someone else's site
+          #render :text => message
+        }
+      end
     end
   end
   
