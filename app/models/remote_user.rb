@@ -4,7 +4,9 @@ class RemoteUser < ActiveRecord::Base
   attr_accessible :email, :address, :remote_company
   has_many :remote_relationships, :dependent => :destroy
   has_many :companies, :through => :remote_relationships 
-  validates :email, :presence => true
+  email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, :presence => true,
+                    :format   => { :with => email_regex }
   validates :address, :presence => true
   geocoded_by :address
   after_validation :geocode  
