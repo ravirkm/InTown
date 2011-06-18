@@ -40,7 +40,7 @@ desc "This task is called by the Heroku cron add-on"
         puts "User #{u.name} is in range, Mailing!"
 	type = 'reminder' ? UserMailer.event_reminder(u,c,e).deliver : UserMailer.event_alert(u,c,e).deliver
       end
-      remote_users_near.each do |u|
+      remote_users_near.each do |r|
         puts "Remote User #{r.name} is in range, Mailing!"
 	type = 'reminder' ? RemoteUserMailer.event_reminder(r,c,e).deliver : RemoteUserMailer.event_alert(r,c,e).deliver
       end
