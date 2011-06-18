@@ -15,7 +15,7 @@ namespace :db do
                  :password => "65a217fbe9",
                  :password_confirmation => "65a217fbe9",
                  :prototype_key => "0b95372d68")
-    radiohead.events.create!(:date => "2011-06-16", :address => "413 4th Ave, Collins, IA 50055")
+    radiohead.events.create!(:date => "2011-06-20", :address => "413 4th Ave, Collins, IA 50055")
     radiohead.events.create!(:date => "2011-06-17", :address => "413 4th Ave, Collins, IA 50055")
     radiohead.events.create!(:date => "2011-06-18", :address => "413 4th Ave, Collins, IA 50055")
     radiohead.events.create!(:date => "2011-06-19", :address => "413 4th Ave, Collins, IA 50055")
@@ -25,7 +25,7 @@ namespace :db do
                  :password => "65a217fbe9",
                  :password_confirmation => "65a217fbe9",
                  :prototype_key => "0b95372d68")
-    lilwayne.events.create!(:date => "2011-06-16", :address => "1426 1st Avenue, Seattle, WA")
+    lilwayne.events.create!(:date => "2011-06-20", :address => "1426 1st Avenue, Seattle, WA")
     lilwayne.events.create!(:date => "2011-06-17", :address => "1426 1st Avenue, Seattle, WA")
     lilwayne.events.create!(:date => "2011-06-18", :address => "1426 1st Avenue, Seattle, WA")
     lilwayne.events.create!(:date => "2011-06-19", :address => "1426 1st Avenue, Seattle, WA")
@@ -36,7 +36,7 @@ namespace :db do
                  :password => "65a217fbe9",
                  :password_confirmation => "65a217fbe9",
                  :prototype_key => "0b95372d68")
-    mgs.events.create!(:date => "2011-06-16", :address => "Claremont, CA 91711")
+    mgs.events.create!(:date => "2011-06-21", :address => "Claremont, CA 91711")
     mgs.events.create!(:date => "2011-06-17", :address => "Claremont, CA 91711")  
     mgs.events.create!(:date => "2011-06-18", :address => "Claremont, CA 91711")  
     mgs.events.create!(:date => "2011-06-19", :address => "Claremont, CA 91711")  
@@ -47,7 +47,7 @@ namespace :db do
                  :password => "65a217fbe9",
                  :password_confirmation => "65a217fbe9",
                  :prototype_key => "0b95372d68")
-    ladygaga.events.create!(:date => "2011-06-16", :address => "1260 Avenue of the Americas, New York, NY 10020")
+    ladygaga.events.create!(:date => "2011-06-20", :address => "1260 Avenue of the Americas, New York, NY 10020")
     ladygaga.events.create!(:date => "2011-06-17", :address => "1260 Avenue of the Americas, New York, NY 10020")
     ladygaga.events.create!(:date => "2011-06-18", :address => "1260 Avenue of the Americas, New York, NY 10020")
     ladygaga.events.create!(:date => "2011-06-19", :address => "1260 Avenue of the Americas, New York, NY 10020")             

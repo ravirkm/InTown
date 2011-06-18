@@ -17,6 +17,7 @@ class Company < ActiveRecord::Base
                            :dependent => :destroy
   has_many :events, :dependent => :destroy
   has_many :users, :through => :relationships
+  has_many :remote_users, :through => :remote_relationships
   validates :company_name, :presence => true, :length => { :maximum => 50 }
   validates :contact_name, :presence => true, :length => { :maximum => 30 }
   validate :verify_prototype_key

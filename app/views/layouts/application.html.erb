@@ -12,73 +12,70 @@
   </head>
   <body>
     <div id="container">
-			<div id="header">
-				<div id="header_left">
-						<div id="logo">
-							<%= link_to (image_tag "event_alerts_2row.png", {:width => "375" }), '/' %>
-						</div>
-					</div>
-			  <div id="session_status">
-						<% if user_signed_in? %>
-							<div id="top_nav">
-								<% if current_user.admin %>
-									<li id='mailer'> <%= link_to "Mail!", event_mail_reminders_path('today') %></li> 
-									<li><%= link_to "All Users", users_path %></li>
-								<% else %>
-									<li><%= link_to "Home", '/' %></li> 
-								<% end %>
-								<li><%= link_to "Settings", edit_user_registration_path %></li>
-								<li><%= link_to "Sign out", destroy_user_session_path %></li>
-							</div>
-						<% elsif company_signed_in?%>
-							<div id="top_nav">
-								<li><%= link_to "Home", '/' %></li> 
-								<li><%= link_to "Settings", edit_company_registration_path %></li>
-								<li><%= link_to "Sign out", destroy_company_session_path %></li>
-							</div>
-						<% else %>
-							<%= render :partial => "users/sessions/login" %>
-						<% end %>
-					</div>
-			  
-			  <div id="header_right">
-					
-					<div id="subtitle">
-						<!--<h2> Event Alert!™ </h2>-->
-					</div>
-				</div>
-			</div>
-			<hr>
-			<% if user_signed_in? %>
-			<div id="searchbar-text">
-				<p class="right"> Search for companies that interest you: </p>
-			</div>
-			<div id="searchbar-graphics" class="center">
-				<%= render :partial => "shared/searchbar" %>
-			</div>
-			<hr>
-			<% end %>
-			<div id="notices">
-					<% flash.each do |name, msg| %>
-						<%= content_tag :div, msg, :id => "flash_#{name}" %>
-					<% end %>
-		  </div>
-			<div id="content">
-			    <%= content_tag :h1, yield(:title) if show_title? %>
-				  <%= yield %>
-				  <%= yield :scripts %>		
-			</div>
-			<div id="bottom_nav">
-					<ul id="bottom_nav_list">
-						<li><%= link_to "About", pages_about_path %></li>
-						<li><%= link_to "Contact", pages_contact_path %></li>
-						<li><%= link_to "Help", pages_help_path %></li>
-						<% unless user_signed_in? or company_signed_in? %>
-							<li><%= link_to "Company Sign In", new_company_session_path %></li>
-							<li><%= link_to "Sign Up", '/' %></li>
-						<% end %>
-					</ul>
-		  </div>
+      <div id="header">
+	<div id="header_left">
+	  <div id="logo">
+	    <%= link_to (image_tag "event_alerts_2row.png", {:width => "375" }), '/' %>
+	  </div>
+	</div>
+	<div id="session_status">
+	  <% if user_signed_in? %>
+            <div id="top_nav">
+	      <% if current_user.admin %>
+		<li><%= link_to "All Users", users_path %></li>
+	      <% else %>
+		<li><%= link_to "Home", '/' %></li> 
+	      <% end %>
+	      <li><%= link_to "Settings", edit_user_registration_path %></li>
+	      <li><%= link_to "Sign out", destroy_user_session_path %></li>
+	    </div>
+	  <% elsif company_signed_in?%>
+	    <div id="top_nav">
+	      <li><%= link_to "Home", '/' %></li> 
+	      <li><%= link_to "Settings", edit_company_registration_path %></li>
+	      <li><%= link_to "Sign out", destroy_company_session_path %></li>
+	    </div>
+	  <% else %>
+	    <%= render :partial => "users/sessions/login" %>
+	  <% end %>
+        </div>
+        <div id="header_right">
+          <div id="subtitle">
+            <!--<h2> Event Alert!™ </h2>-->
+	  </div>
+	</div>
+      </div>
+      <hr>
+      <% if user_signed_in? %>
+	<div id="searchbar-text">
+	  <p class="right"> Search for companies that interest you: </p>
+	</div>
+	<div id="searchbar-graphics" class="center">
+	  <%= render :partial => "shared/searchbar" %>
+	</div>
+	<hr>
+      <% end %>
+      <div id="notices">
+	<% flash.each do |name, msg| %>
+	  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+	<% end %>
+      </div>
+      <div id="content">
+	<%= content_tag :h1, yield(:title) if show_title? %>
+	<%= yield %>
+	<%= yield :scripts %>		
+      </div>
+      <div id="bottom_nav">
+	<ul id="bottom_nav_list">
+	  <li><%= link_to "About", pages_about_path %></li>
+	  <li><%= link_to "Contact", pages_contact_path %></li>
+	  <li><%= link_to "Help", pages_help_path %></li>
+	  <% unless user_signed_in? or company_signed_in? %>
+	    <li><%= link_to "Company Sign In", new_company_session_path %></li>
+	    <li><%= link_to "Sign Up", '/' %></li>
+	  <% end %>
+	</ul>
+      </div>
     </div>
   </body>
 </html>
