@@ -12410,3 +12410,26 @@ DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3
   [1m[35mSQL (0.3ms)[0m  BEGIN
   [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "events" ("company_id", "date", "address", "created_at", "updated_at", "latitude", "longitude") VALUES (4, '2011-06-19', '1260 Avenue of the Americas, New York, NY 10020', '2011-06-18 02:22:42.009829', '2011-06-18 02:22:42.009829', 40.75998, -73.980365) RETURNING "id"[0m
   [1m[35mSQL (31.4ms)[0m  COMMIT
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/apeiron/rails/in_town/config/environment.rb:7)
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.6ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.3ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.3ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (0.9ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TIME ZONE
+  [1m[36mSQL (8.5ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'schema_migrations'
+ 
+[0m
+  [1m[35mSQL (3.4ms)[0m   SELECT tablename
+ FROM pg_tables
+ WHERE schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (9.3ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"schema_migrations"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mSQL (1.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
