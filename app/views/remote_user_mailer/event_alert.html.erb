@@ -13,7 +13,7 @@
 <p>You haven't fully registered with InTown! Please follow this link to complete your profile!</p>
 <% transform_url = url_for(:host => @host,
                            :controller => "remote_users",
-                           :action => "transform"
+                           :action => "transform",
                            :id => @remote_user) %>
 <%= link_to "Complete Account!", transform_url %>
 
