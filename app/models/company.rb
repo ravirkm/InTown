@@ -15,6 +15,8 @@ class Company < ActiveRecord::Base
 									:contact_name, :company_name, :prototype_key
   has_many :relationships, :foreign_key => "company_id",
                            :dependent => :destroy
+  has_many :remote_relationships, :foreign_key => "company_id",
+                           :dependent => :destroy			   
   has_many :events, :dependent => :destroy
   has_many :users, :through => :relationships
   has_many :remote_users, :through => :remote_relationships
