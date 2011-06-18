@@ -1,4 +1,4 @@
-<p> FULL USER REMINDER </p>
+<p> REMOTE USER REMINDER </p>
 <p><%= @user.name %>,</p>
 <p><%= @company.company_name %> is having an event at <%= @event.address %> on <%= @event.date %>! </p>
 <% ll = "#{@lat},#{@long}" %>
@@ -10,15 +10,18 @@
 
 <%= link_to "Get Directions", link_url %>
 <hr>
-<% edit_url = url_for(:host => @host,
-                      :controller => "users",
-                      :action => "edit"
-                      :id => @user) %>
-<p> Click <%= link_to "here", edit_url" %> to edit your profile on InTown! </p>
-
+<h2> Complete your account! </h2>
+<p>You haven't fully registered with InTown! Please follow this link to complete your profile!</p>
+<% transform_url = url_for(:host => @host,
+                           :controller => "remote_users",
+                           :action => "transform"
+                           :id => @remote_user) %>
+<%= link_to "Complete Account!", transform_url %>
 
 
 <p> Visit <%= link_to "EventAlerts!", @host %> </p>
 <hr>
 <p> Here is some extra text in a more conversational form. Lately, a lot of my Gmail messages have been mistakenly bounced by Google because they looked like spam. I'm not sure if this will help, but hopefully now that there is more content in the messages, they won't get flagged as spam. </p> 
 <p> Sincerely,<br/> Dominick </p>
+
+

@@ -1,6 +1,6 @@
-<p> FULL USER REMINDER </p>
+<p> REMOTE USER ALERT </p>
 <p><%= @user.name %>,</p>
-<p><%= @company.company_name %> is having an event at <%= @event.address %> on <%= @event.date %>! </p>
+<p><%= @company.company_name %> is having an event at <%= @event.address %> in <%= (@event.date.to_date - @today).to_s %> days! </p>
 <% ll = "#{@lat},#{@long}" %>
 <hr>
 <% link_url = "http://maps.google.com/maps?f=d&source=s_d&saddr=" + ll + "&daddr=" + @event.address + "&hl=en&ie=UTF8&t=h" %>
@@ -10,12 +10,13 @@
 
 <%= link_to "Get Directions", link_url %>
 <hr>
-<% edit_url = url_for(:host => @host,
-                      :controller => "users",
-                      :action => "edit"
-                      :id => @user) %>
-<p> Click <%= link_to "here", edit_url" %> to edit your profile on InTown! </p>
-
+<h2> Complete your account! </h2>
+<p>You haven't fully registered with InTown! Please follow this link to complete your profile!</p>
+<% transform_url = url_for(:host => @host,
+                           :controller => "remote_users",
+                           :action => "transform"
+                           :id => @remote_user) %>
+<%= link_to "Complete Account!", transform_url %>
 
 
 <p> Visit <%= link_to "EventAlerts!", @host %> </p>
