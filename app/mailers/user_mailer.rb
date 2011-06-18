@@ -8,7 +8,7 @@ class UserMailer < ActionMailer::Base
     @user = user
     @lat = user.latitude
     @long = user.longitude
-    @host = "http://intown.heroku.com/"
+    @host = "http://intown.heroku.com"
     @company = company
     @event = event
 	  @midpoint =  "#{Geocoder::Calculations.geographic_center([@event, @user])}".gsub('[','').gsub(']','')

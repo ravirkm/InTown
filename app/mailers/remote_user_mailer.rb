@@ -8,7 +8,7 @@ class RemoteUserMailer < ActionMailer::Base
     @remote_user = remote_user
     @lat = remote_user.latitude
     @long = remote_user.longitude
-    @host = "http://intown.heroku.com/"
+    @host = "http://intown.heroku.com"
     @company = company
     @event = event
 	  @midpoint =  "#{Geocoder::Calculations.geographic_center([@event, @remote_user])}".gsub('[','').gsub(']','')
