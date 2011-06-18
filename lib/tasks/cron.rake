@@ -9,8 +9,11 @@ desc "This task is called by the Heroku cron add-on"
   def update_event_dates
     puts "Cleaning up dates.."
     t = Date.today
+    today = t.to_s
     yesterday = (t - 1).to_s
-    Event.where("date = ?", yesterday).date = today
+    for e in Event.where("date = ?", yesterday)
+      e.date = today
+    end
   end
     
   
@@ -30,13 +33,14 @@ desc "This task is called by the Heroku cron add-on"
     month_events = Event.where("date = ?", month)
     added_yesterday = Event.where("created_at = ?", (t - 1))
     #added_yesterday = Event.where(:created_at => (t - 1))
+    puts added_yesterday.first
     
     # send mail to users for each array
     send_mail(todays_events,'reminder')
     send_mail(tomorrows_events,'reminder')
     send_mail(two_weeks_events,'reminder')
     send_mail(month_events,'reminder')
-    send_mail(added_today,'alert') 
+    send_mail(added_yesterday, 'alert') 
   end
 		
   def send_mail(event_set,type)

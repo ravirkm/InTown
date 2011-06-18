@@ -12836,3 +12836,286 @@ DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3
   [1m[35mSQL (0.7ms)[0m  BEGIN
   [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "events" ("company_id", "date", "address", "created_at", "updated_at", "latitude", "longitude") VALUES (4, '2011-06-18', '1260 Avenue of the Americas, New York, NY 10020', '2011-06-18 16:33:44.203693', '2011-06-18 16:33:44.203693', 40.75998, -73.980365) RETURNING "id"[0m
   [1m[35mSQL (8.8ms)[0m  COMMIT
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/apeiron/rails/in_town/config/environment.rb:7)
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.5ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.4ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.3ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (1.0ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TIME ZONE
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/apeiron/rails/in_town/config/environment.rb:7)
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.3ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.3ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.3ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (1.0ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TIME ZONE
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/apeiron/rails/in_town/config/environment.rb:7)
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.4ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.7ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.3ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (1.8ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TIME ZONE
+  [1m[36mEvent Load (25.8ms)[0m  [1mSELECT "events".* FROM "events" WHERE (date = '2011-06-18') ORDER BY events.date[0m
+  [1m[35mSQL (7.5ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"events"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mSQL (3.0ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"companies"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mSQL (7.6ms)[0m   SELECT tablename
+ FROM pg_tables
+ WHERE schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (2.7ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"companies"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mCompany Load (2.5ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 4 LIMIT 1
+  [1m[36mUser Load (16.7ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".user_id WHERE (("relationships".company_id = 4))[0m
+  [1m[35mRemoteUser Load (2.9ms)[0m  SELECT "remote_users".* FROM "remote_users" INNER JOIN "remote_relationships" ON "remote_users".id = "remote_relationships".remote_user_id WHERE (("remote_relationships".company_id = 4))
+  [1m[36mCompany Load (1.1ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+  [1m[35mUser Load (1.7ms)[0m  SELECT "users".* FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".user_id WHERE (("relationships".company_id = 3))
+  [1m[36mRemoteUser Load (1.2ms)[0m  [1mSELECT "remote_users".* FROM "remote_users" INNER JOIN "remote_relationships" ON "remote_users".id = "remote_relationships".remote_user_id WHERE (("remote_relationships".company_id = 3))[0m
+  [1m[35mCompany Load (1.1ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+  [1m[36mUser Load (2.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".user_id WHERE (("relationships".company_id = 2))[0m
+  [1m[35mRemoteUser Load (1.2ms)[0m  SELECT "remote_users".* FROM "remote_users" INNER JOIN "remote_relationships" ON "remote_users".id = "remote_relationships".remote_user_id WHERE (("remote_relationships".company_id = 2))
+  [1m[36mCompany Load (2.5ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (2.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".user_id WHERE (("relationships".company_id = 1))
+  [1m[36mRemoteUser Load (1.3ms)[0m  [1mSELECT "remote_users".* FROM "remote_users" INNER JOIN "remote_relationships" ON "remote_users".id = "remote_relationships".remote_user_id WHERE (("remote_relationships".company_id = 1))[0m
+  [1m[35mEvent Load (0.9ms)[0m  SELECT "events".* FROM "events" WHERE (date = '2011-06-19') ORDER BY events.date
+  [1m[36mEvent Load (1.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE (date = '2011-07-02') ORDER BY events.date[0m
+  [1m[35mEvent Load (1.0ms)[0m  SELECT "events".* FROM "events" WHERE (date = '2011-07-18') ORDER BY events.date
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/apeiron/rails/in_town/config/environment.rb:7)
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.3ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.3ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (1.2ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (1.0ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TIME ZONE
+  [1m[36mEvent Load (7.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE (created_at = '2011-06-17') ORDER BY events.date LIMIT 1[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/apeiron/rails/in_town/config/environment.rb:7)
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.6ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.4ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.3ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (1.0ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TIME ZONE
+  [1m[36mEvent Load (6.7ms)[0m  [1mSELECT "events".* FROM "events" WHERE (created_at = '2011-06-17') ORDER BY events.date LIMIT 1[0m
+  [1m[35mEvent Load (3.5ms)[0m  SELECT "events".* FROM "events" WHERE (date = '2011-06-18') ORDER BY events.date
+  [1m[36mSQL (7.3ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"events"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mSQL (2.6ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"companies"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mSQL (6.9ms)[0m  [1m SELECT tablename
+ FROM pg_tables
+ WHERE schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (2.6ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"companies"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mCompany Load (2.4ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 4 LIMIT 1[0m
+  [1m[35mUser Load (4.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".user_id WHERE (("relationships".company_id = 4))
+  [1m[36mRemoteUser Load (2.6ms)[0m  [1mSELECT "remote_users".* FROM "remote_users" INNER JOIN "remote_relationships" ON "remote_users".id = "remote_relationships".remote_user_id WHERE (("remote_relationships".company_id = 4))[0m
+  [1m[35mCompany Load (1.2ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".user_id WHERE (("relationships".company_id = 3))[0m
+  [1m[35mRemoteUser Load (1.2ms)[0m  SELECT "remote_users".* FROM "remote_users" INNER JOIN "remote_relationships" ON "remote_users".id = "remote_relationships".remote_user_id WHERE (("remote_relationships".company_id = 3))
+  [1m[36mCompany Load (1.1ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+  [1m[35mUser Load (1.8ms)[0m  SELECT "users".* FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".user_id WHERE (("relationships".company_id = 2))
+  [1m[36mRemoteUser Load (1.3ms)[0m  [1mSELECT "remote_users".* FROM "remote_users" INNER JOIN "remote_relationships" ON "remote_users".id = "remote_relationships".remote_user_id WHERE (("remote_relationships".company_id = 2))[0m
+  [1m[35mCompany Load (1.0ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 1 LIMIT 1
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".user_id WHERE (("relationships".company_id = 1))[0m
+  [1m[35mRemoteUser Load (1.3ms)[0m  SELECT "remote_users".* FROM "remote_users" INNER JOIN "remote_relationships" ON "remote_users".id = "remote_relationships".remote_user_id WHERE (("remote_relationships".company_id = 1))
+  [1m[36mEvent Load (1.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE (date = '2011-06-19') ORDER BY events.date[0m
+  [1m[35mEvent Load (1.0ms)[0m  SELECT "events".* FROM "events" WHERE (date = '2011-07-02') ORDER BY events.date
+  [1m[36mEvent Load (1.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE (date = '2011-07-18') ORDER BY events.date[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/apeiron/rails/in_town/config/environment.rb:7)
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.6ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.4ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.3ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (1.2ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TIME ZONE
+  [1m[36mEvent Load (6.8ms)[0m  [1mSELECT "events".* FROM "events" WHERE (created_at = '2011-06-17') ORDER BY events.date LIMIT 1[0m
+  [1m[35mEvent Load (3.8ms)[0m  SELECT "events".* FROM "events" WHERE (date = '2011-06-18') ORDER BY events.date
+  [1m[36mSQL (7.6ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"events"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mSQL (2.8ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"companies"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mSQL (7.2ms)[0m  [1m SELECT tablename
+ FROM pg_tables
+ WHERE schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (2.7ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"companies"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mCompany Load (2.4ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 4 LIMIT 1[0m
+  [1m[35mUser Load (4.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".user_id WHERE (("relationships".company_id = 4))
+  [1m[36mRemoteUser Load (3.0ms)[0m  [1mSELECT "remote_users".* FROM "remote_users" INNER JOIN "remote_relationships" ON "remote_users".id = "remote_relationships".remote_user_id WHERE (("remote_relationships".company_id = 4))[0m
+  [1m[35mCompany Load (1.2ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".user_id WHERE (("relationships".company_id = 3))[0m
+  [1m[35mRemoteUser Load (1.2ms)[0m  SELECT "remote_users".* FROM "remote_users" INNER JOIN "remote_relationships" ON "remote_users".id = "remote_relationships".remote_user_id WHERE (("remote_relationships".company_id = 3))
+  [1m[36mCompany Load (1.1ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+  [1m[35mUser Load (1.8ms)[0m  SELECT "users".* FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".user_id WHERE (("relationships".company_id = 2))
+  [1m[36mRemoteUser Load (1.8ms)[0m  [1mSELECT "remote_users".* FROM "remote_users" INNER JOIN "remote_relationships" ON "remote_users".id = "remote_relationships".remote_user_id WHERE (("remote_relationships".company_id = 2))[0m
+  [1m[35mCompany Load (1.1ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 1 LIMIT 1
+  [1m[36mUser Load (1.9ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".user_id WHERE (("relationships".company_id = 1))[0m
+  [1m[35mRemoteUser Load (1.3ms)[0m  SELECT "remote_users".* FROM "remote_users" INNER JOIN "remote_relationships" ON "remote_users".id = "remote_relationships".remote_user_id WHERE (("remote_relationships".company_id = 1))
+  [1m[36mEvent Load (1.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE (date = '2011-06-19') ORDER BY events.date[0m
+  [1m[35mEvent Load (1.2ms)[0m  SELECT "events".* FROM "events" WHERE (date = '2011-07-02') ORDER BY events.date
+  [1m[36mEvent Load (1.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE (date = '2011-07-18') ORDER BY events.date[0m
+  [1m[35mEvent Load (1.2ms)[0m  SELECT "events".* FROM "events" WHERE (created_at = '2011-06-17') ORDER BY events.date
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/apeiron/rails/in_town/config/environment.rb:7)
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.3ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.6ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.3ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (1.0ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TIME ZONE
+  [1m[36mEvent Load (7.7ms)[0m  [1mSELECT "events".* FROM "events" ORDER BY events.date[0m
+  [1m[35mSQL (9.6ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"events"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/apeiron/rails/in_town/config/environment.rb:7)
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.3ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.3ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.3ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (1.0ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TIME ZONE
+  [1m[36mEvent Load (7.6ms)[0m  [1mSELECT "events".* FROM "events" WHERE (date = '2011-06-17') ORDER BY events.date[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/apeiron/rails/in_town/config/environment.rb:7)
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.4ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.4ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.3ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (3.2ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TIME ZONE
+  [1m[36mEvent Load (10.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE (date = '2011-06-17') ORDER BY events.date[0m
+  [1m[35mEvent Load (2.2ms)[0m  SELECT "events".* FROM "events" WHERE (created_at = '2011-06-17') ORDER BY events.date LIMIT 1
+  [1m[36mEvent Load (1.4ms)[0m  [1mSELECT "events".* FROM "events" WHERE (date = '2011-06-18') ORDER BY events.date[0m
+  [1m[35mSQL (10.8ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"events"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mSQL (4.3ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"companies"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mSQL (7.4ms)[0m   SELECT tablename
+ FROM pg_tables
+ WHERE schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (3.7ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"companies"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mCompany Load (3.8ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 4 LIMIT 1
+  [1m[36mUser Load (4.7ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".user_id WHERE (("relationships".company_id = 4))[0m
+  [1m[35mRemoteUser Load (3.0ms)[0m  SELECT "remote_users".* FROM "remote_users" INNER JOIN "remote_relationships" ON "remote_users".id = "remote_relationships".remote_user_id WHERE (("remote_relationships".company_id = 4))
+  [1m[36mCompany Load (1.1ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+  [1m[35mUser Load (1.8ms)[0m  SELECT "users".* FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".user_id WHERE (("relationships".company_id = 3))
+  [1m[36mRemoteUser Load (1.5ms)[0m  [1mSELECT "remote_users".* FROM "remote_users" INNER JOIN "remote_relationships" ON "remote_users".id = "remote_relationships".remote_user_id WHERE (("remote_relationships".company_id = 3))[0m
+  [1m[35mCompany Load (1.1ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".user_id WHERE (("relationships".company_id = 2))[0m
+  [1m[35mRemoteUser Load (1.2ms)[0m  SELECT "remote_users".* FROM "remote_users" INNER JOIN "remote_relationships" ON "remote_users".id = "remote_relationships".remote_user_id WHERE (("remote_relationships".company_id = 2))
+  [1m[36mCompany Load (1.0ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (2.4ms)[0m  SELECT "users".* FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".user_id WHERE (("relationships".company_id = 1))
+  [1m[36mRemoteUser Load (1.1ms)[0m  [1mSELECT "remote_users".* FROM "remote_users" INNER JOIN "remote_relationships" ON "remote_users".id = "remote_relationships".remote_user_id WHERE (("remote_relationships".company_id = 1))[0m
+  [1m[35mEvent Load (0.9ms)[0m  SELECT "events".* FROM "events" WHERE (date = '2011-06-19') ORDER BY events.date
+  [1m[36mEvent Load (0.9ms)[0m  [1mSELECT "events".* FROM "events" WHERE (date = '2011-07-02') ORDER BY events.date[0m
+  [1m[35mEvent Load (0.9ms)[0m  SELECT "events".* FROM "events" WHERE (date = '2011-07-18') ORDER BY events.date
+  [1m[36mEvent Load (1.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE (created_at = '2011-06-17') ORDER BY events.date[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/apeiron/rails/in_town/config/environment.rb:7)
+  [1m[36mSQL (1.2ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.7ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.3ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.3ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (1.0ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TIME ZONE
+  [1m[36mEvent Load (10.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE (date = '2011-06-17') ORDER BY events.date[0m
+  [1m[35mEvent Load (1.9ms)[0m  SELECT "events".* FROM "events" WHERE (created_at = '2011-06-17') ORDER BY events.date LIMIT 1
+  [1m[36mEvent Load (1.8ms)[0m  [1mSELECT "events".* FROM "events" WHERE (date = '2011-06-18') ORDER BY events.date[0m
+  [1m[35mSQL (9.1ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"events"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mSQL (2.8ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"companies"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mSQL (9.1ms)[0m   SELECT tablename
+ FROM pg_tables
+ WHERE schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (3.3ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"companies"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mCompany Load (2.2ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 4 LIMIT 1
+  [1m[36mUser Load (4.9ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".user_id WHERE (("relationships".company_id = 4))[0m
+  [1m[35mRemoteUser Load (2.7ms)[0m  SELECT "remote_users".* FROM "remote_users" INNER JOIN "remote_relationships" ON "remote_users".id = "remote_relationships".remote_user_id WHERE (("remote_relationships".company_id = 4))
+  [1m[36mCompany Load (1.1ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+  [1m[35mUser Load (1.9ms)[0m  SELECT "users".* FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".user_id WHERE (("relationships".company_id = 3))
+  [1m[36mRemoteUser Load (1.2ms)[0m  [1mSELECT "remote_users".* FROM "remote_users" INNER JOIN "remote_relationships" ON "remote_users".id = "remote_relationships".remote_user_id WHERE (("remote_relationships".company_id = 3))[0m
+  [1m[35mCompany Load (4.0ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".user_id WHERE (("relationships".company_id = 2))[0m
+  [1m[35mRemoteUser Load (1.5ms)[0m  SELECT "remote_users".* FROM "remote_users" INNER JOIN "remote_relationships" ON "remote_users".id = "remote_relationships".remote_user_id WHERE (("remote_relationships".company_id = 2))
+  [1m[36mCompany Load (1.7ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (1.9ms)[0m  SELECT "users".* FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".user_id WHERE (("relationships".company_id = 1))
+  [1m[36mRemoteUser Load (1.4ms)[0m  [1mSELECT "remote_users".* FROM "remote_users" INNER JOIN "remote_relationships" ON "remote_users".id = "remote_relationships".remote_user_id WHERE (("remote_relationships".company_id = 1))[0m
+  [1m[35mEvent Load (0.9ms)[0m  SELECT "events".* FROM "events" WHERE (date = '2011-06-19') ORDER BY events.date
+  [1m[36mEvent Load (0.9ms)[0m  [1mSELECT "events".* FROM "events" WHERE (date = '2011-07-02') ORDER BY events.date[0m
+  [1m[35mEvent Load (0.9ms)[0m  SELECT "events".* FROM "events" WHERE (date = '2011-07-18') ORDER BY events.date
+  [1m[36mEvent Load (0.9ms)[0m  [1mSELECT "events".* FROM "events" WHERE (created_at = '2011-06-17') ORDER BY events.date[0m
