@@ -14,7 +14,7 @@
 <% transform_url = url_for(:host => @host,
                            :controller => "remote_users",
                            :action => "transform",
-                           :remote_user => @remote_user) %>
+                           :email => @remote_user.email) %>
 <%= link_to "Complete Account!", transform_url %>
 
 

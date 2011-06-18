@@ -5,7 +5,7 @@ class RemoteUsersController < ApplicationController
   end
   
   def transform
-    temp = RemoteUser.find_by_email(params[:remote_user][:email])
+    temp = RemoteUser.find_by_email(params[:email])
     unless temp
       unless User.find_by_email(params[:remote_user][:email])
         flash[:error] = "Sorry, this email isn't associated with any EventAlerts account."
