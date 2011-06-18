@@ -1,6 +1,6 @@
 require 'geocoder'
 require 'date'
-class UserMailer < ActionMailer::Base
+class RemoteUserMailer < ActionMailer::Base
   default :from => "eventalertss@gmail.com"
   
   def event_reminder(remote_user,company,event)
