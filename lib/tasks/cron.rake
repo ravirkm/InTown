@@ -2,13 +2,13 @@ require 'date'
 
 desc "This task is called by the Heroku cron add-on"
   task :cron => :environment do
-    t = Date.today
-    today = t.to_s
     update_event_dates
     init_mail_reminders
   end 
   
   def update_event_dates
+    puts "Cleaning up dates.."
+    t = Date.today
     yesterday = (t - 1).to_s
     Event.where("date = ?", yesterday).date = today
   end
@@ -17,6 +17,8 @@ desc "This task is called by the Heroku cron add-on"
   def init_mail_reminders
     puts "Initiating mail_reminders.."
     # cast relevant dates to strings
+    t = Date.today
+    today = t.to_s
     tomorrow = (t + 1).to_s
     two_weeks = (t + 14).to_s
     month = t.next_month.to_s
