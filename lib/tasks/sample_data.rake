@@ -1,7 +1,9 @@
+require 'date'
 namespace :db do
   desc "Fill database with sample data"
   task :populate => :environment do
     Rake::Task['db:reset'].invoke
+    today = Date.today.to_s
     admin = User.create!(:name => "admin",
                  :email => "admin@intown.com",
                  :address => "N/A",
@@ -15,43 +17,29 @@ namespace :db do
                  :password => "65a217fbe9",
                  :password_confirmation => "65a217fbe9",
                  :prototype_key => "0b95372d68")
-    radiohead.events.create!(:date => "2011-06-20", :address => "413 4th Ave, Collins, IA 50055")
-    radiohead.events.create!(:date => "2011-06-17", :address => "413 4th Ave, Collins, IA 50055")
-    radiohead.events.create!(:date => "2011-06-18", :address => "413 4th Ave, Collins, IA 50055")
-    radiohead.events.create!(:date => "2011-06-19", :address => "413 4th Ave, Collins, IA 50055")
+    radiohead.events.create!(:date => today, :address => "413 4th Ave, Collins, IA 50055")
     lilwayne = Company.create!(:contact_name => "Lil Wayne",
                  :email => "lilwayne@youngmoney.net",
                  :company_name => "Lil Wayne",
                  :password => "65a217fbe9",
                  :password_confirmation => "65a217fbe9",
                  :prototype_key => "0b95372d68")
-    lilwayne.events.create!(:date => "2011-06-20", :address => "1426 1st Avenue, Seattle, WA")
-    lilwayne.events.create!(:date => "2011-06-17", :address => "1426 1st Avenue, Seattle, WA")
-    lilwayne.events.create!(:date => "2011-06-18", :address => "1426 1st Avenue, Seattle, WA")
-    lilwayne.events.create!(:date => "2011-06-19", :address => "1426 1st Avenue, Seattle, WA")
-    lilwayne.events.create!(:date => "2011-06-20", :address => "1426 1st Avenue, Seattle, WA")
+    lilwayne.events.create!(:date => today, :address => "1426 1st Avenue, Seattle, WA")
     mgs = Company.create!(:contact_name => "John Darnielle",
                  :email => "jd@mgs.net",
                  :company_name => "The Mountain Goats",
                  :password => "65a217fbe9",
                  :password_confirmation => "65a217fbe9",
                  :prototype_key => "0b95372d68")
-    mgs.events.create!(:date => "2011-06-21", :address => "Claremont, CA 91711")
-    mgs.events.create!(:date => "2011-06-17", :address => "Claremont, CA 91711")  
-    mgs.events.create!(:date => "2011-06-18", :address => "Claremont, CA 91711")  
-    mgs.events.create!(:date => "2011-06-19", :address => "Claremont, CA 91711")  
-    mgs.events.create!(:date => "2011-06-20", :address => "Claremont, CA 91711")           
+    mgs.events.create!(:date => today, :address => "Claremont, CA 91711")
     ladygaga = Company.create!(:contact_name => "Lady Gaga",
                  :email => "lady@gaga.net",
                  :company_name => "Lady Gaga",
                  :password => "65a217fbe9",
                  :password_confirmation => "65a217fbe9",
                  :prototype_key => "0b95372d68")
-    ladygaga.events.create!(:date => "2011-06-20", :address => "1260 Avenue of the Americas, New York, NY 10020")
-    ladygaga.events.create!(:date => "2011-06-17", :address => "1260 Avenue of the Americas, New York, NY 10020")
-    ladygaga.events.create!(:date => "2011-06-18", :address => "1260 Avenue of the Americas, New York, NY 10020")
-    ladygaga.events.create!(:date => "2011-06-19", :address => "1260 Avenue of the Americas, New York, NY 10020")             
- 
+    ladygaga.events.create!(:date => today, :address => "1260 Avenue of the Americas, New York, NY 10020")
+    
 =begin 
     5000.times do |n|
       name  = Faker::Name.name

@@ -2,14 +2,21 @@ require 'date'
 
 desc "This task is called by the Heroku cron add-on"
   task :cron => :environment do
+    t = Date.today
+    today = t.to_s
+    update_event_dates
     init_mail_reminders
   end 
-
+  
+  def update_event_dates
+    yesterday = (t - 1).to_s
+    Event.where("date = ?", yesterday).date = today
+  end
+    
+  
   def init_mail_reminders
     puts "Initiating mail_reminders.."
     # cast relevant dates to strings
-    t = Date.today
-    today = t.to_s
     tomorrow = (t + 1).to_s
     two_weeks = (t + 14).to_s
     month = t.next_month.to_s
@@ -19,8 +26,8 @@ desc "This task is called by the Heroku cron add-on"
     tomorrows_events = Event.where("date = ?", tomorrow)
     two_weeks_events = Event.where("date = ?", two_weeks)
     month_events = Event.where("date = ?", month)
-    #added_today = Event.where("created_at.to_date.to_s = ?", today) #needs fixing
-    added_today = Event.where(:created_at => (t - 1))
+    added_yesterday = Event.where("created_at = ?", (t - 1))
+    #added_yesterday = Event.where(:created_at => (t - 1))
     
     # send mail to users for each array
     send_mail(todays_events,'reminder')
