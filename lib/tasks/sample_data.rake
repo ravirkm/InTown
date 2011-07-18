@@ -4,13 +4,13 @@ namespace :db do
   task :populate => :environment do
     Rake::Task['db:reset'].invoke
     today = Date.today.to_s
-    admin = User.create!(:name => "admin",
-                 :email => "admin@intown.com",
-                 :address => "N/A",
-                 :password => "Sagehens47",
-                 :password_confirmation => "Sagehens47",
-                 :prototype_key => "0b95372d68")
-    admin.toggle!(:admin)
+#    admin = User.create!(:name => "admin",
+#                 :email => "admin@intown.com",
+#                 :address => "N/A",
+#                 :password => "Sagehens47",
+#                 :password_confirmation => "Sagehens47",
+#                 :prototype_key => "0b95372d68")
+#    admin.toggle!(:admin)
     radiohead = Company.create!(:contact_name => "Thom Yorke",
                  :email => "thom@radiohead.com",
                  :company_name => "Radiohead",
