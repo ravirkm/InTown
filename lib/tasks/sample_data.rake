@@ -17,14 +17,14 @@ namespace :db do
                  :password => "65a217fbe9",
                  :password_confirmation => "65a217fbe9",
                  :prototype_key => "0b95372d68")
-    radiohead.events.create!(:date => today, :address => "413 4th Ave, Collins, IA 50055")
+    radiohead.events.create!(:date => today, :address => "61 Savitt Way, Hartford, CT")
     lilwayne = Company.create!(:contact_name => "Lil Wayne",
                  :email => "lilwayne@youngmoney.net",
                  :company_name => "Lil Wayne",
                  :password => "65a217fbe9",
                  :password_confirmation => "65a217fbe9",
                  :prototype_key => "0b95372d68")
-    lilwayne.events.create!(:date => today, :address => "1426 1st Avenue, Seattle, WA")
+    lilwayne.events.create!(:date => today, :address => "413 4th Avenue, Collins, IA 50055")
     mgs = Company.create!(:contact_name => "John Darnielle",
                  :email => "jd@mgs.net",
                  :company_name => "The Mountain Goats",

@@ -13,7 +13,7 @@
 <% edit_url = url_for(:host => @host,
                       :controller => "users",
                       :action => "edit",
-                      :id => @user) %>
+                      :id => @user.id) %>
 <p> Click <%= link_to "here", edit_url %> to edit your profile on InTown! </p>
 
 
