@@ -18084,3 +18084,20 @@ Rendered shared/_new_user_form.html.erb (166.3ms)
 Rendered users/sessions/_login.html.erb (143.2ms)
 Rendered pages/home.html.erb within layouts/application (348.4ms)
 Completed 200 OK in 622ms (Views: 365.5ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-18 01:35:32 -0500
+  Processing by PagesController#home as HTML
+  [1m[35mSQL (6.3ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+Rendered shared/_services.html.erb (7.3ms)
+Rendered shared/_remote_user_signup.html.erb (8.5ms)
+Rendered shared/_sign_up.html.erb (275.1ms)
+Rendered shared/_new_user_form.html.erb (284.0ms)
+Rendered users/sessions/_login.html.erb (17.8ms)
+Rendered pages/home.html.erb within layouts/application (339.8ms)
+Completed 200 OK in 1010ms (Views: 378.2ms | ActiveRecord: 6.3ms)
