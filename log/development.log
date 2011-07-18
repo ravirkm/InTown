@@ -17756,3 +17756,331 @@ Rendered shared/_new_user_form.html.erb (179.2ms)
 Rendered users/sessions/_login.html.erb (16.7ms)
 Rendered pages/home.html.erb within layouts/application (237.8ms)
 Completed 200 OK in 589ms (Views: 254.8ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-18 01:12:50 -0500
+  Processing by PagesController#home as HTML
+  [1m[35mSQL (3.4ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+Rendered shared/_services.html.erb (7.4ms)
+Rendered shared/_remote_user_signup.html.erb (7.5ms)
+Rendered shared/_sign_up.html.erb (148.5ms)
+Rendered shared/_new_user_form.html.erb (156.7ms)
+Rendered users/sessions/_login.html.erb (15.5ms)
+Rendered pages/home.html.erb within layouts/application (208.8ms)
+Completed 200 OK in 801ms (Views: 225.9ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-07-18 01:13:14 -0500
+
+OAuth::Unauthorized (401 Unauthorized):
+  
+
+Rendered /home/apeiron/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.7ms)
+Rendered /home/apeiron/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.8ms)
+Rendered /home/apeiron/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (27.2ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-07-18 01:13:14 -0500
+
+OAuth::Unauthorized (401 Unauthorized):
+  
+
+Rendered /home/apeiron/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.3ms)
+Rendered /home/apeiron/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.9ms)
+Rendered /home/apeiron/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (27.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-18 01:13:21 -0500
+  Processing by PagesController#home as HTML
+  [1m[36mSQL (3.0ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+Rendered shared/_services.html.erb (7.2ms)
+Rendered shared/_remote_user_signup.html.erb (6.9ms)
+Rendered shared/_sign_up.html.erb (131.9ms)
+Rendered shared/_new_user_form.html.erb (139.5ms)
+Rendered users/sessions/_login.html.erb (14.9ms)
+Rendered pages/home.html.erb within layouts/application (187.7ms)
+Completed 200 OK in 576ms (Views: 204.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-18 01:14:16 -0500
+  Processing by PagesController#home as HTML
+  [1m[35mSQL (8.4ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+Rendered shared/_services.html.erb (10.1ms)
+Rendered shared/_remote_user_signup.html.erb (9.8ms)
+Rendered shared/_sign_up.html.erb (211.4ms)
+Rendered shared/_new_user_form.html.erb (219.0ms)
+Rendered users/sessions/_login.html.erb (26.7ms)
+Rendered pages/home.html.erb within layouts/application (306.9ms)
+Completed 200 OK in 994ms (Views: 324.2ms | ActiveRecord: 8.4ms)
+
+
+Started POST "/d/users/sign_in" for 127.0.0.1 at 2011-07-18 01:14:26 -0500
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u5GhIC3wZO6wLi2Wu2nCYE6lqvGU5B6XidFzO6o3Lj8=", "user"=>{"email"=>"d.reinhold@yahoo.com", "text"=>"Password", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mSQL (3.3ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mUser Load (1.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'd.reinhold@yahoo.com' LIMIT 1
+  [1m[36mSQL (2.9ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+Completed   in 506ms
+  Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u5GhIC3wZO6wLi2Wu2nCYE6lqvGU5B6XidFzO6o3Lj8=", "user"=>{"email"=>"d.reinhold@yahoo.com", "text"=>"Password", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+WARNING: Can't mass-assign protected attributes: text
+Rendered /home/apeiron/.rvm/gems/ruby-1.9.2-p180/gems/devise-1.3.4/app/views/devise/shared/_links.erb (8.8ms)
+Rendered users/sessions/_login.html.erb (17.8ms)
+Rendered users/sessions/new.html.erb within layouts/application (324.9ms)
+Completed 200 OK in 631ms (Views: 356.8ms | ActiveRecord: 7.5ms)
+
+
+Started POST "/d/users/sign_in" for 127.0.0.1 at 2011-07-18 01:14:39 -0500
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u5GhIC3wZO6wLi2Wu2nCYE6lqvGU5B6XidFzO6o3Lj8=", "user"=>{"email"=>"admin@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mSQL (3.2ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'admin@yahoo.com' LIMIT 1[0m
+Completed   in 133ms
+  Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u5GhIC3wZO6wLi2Wu2nCYE6lqvGU5B6XidFzO6o3Lj8=", "user"=>{"email"=>"admin@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mSQL (2.8ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+Rendered /home/apeiron/.rvm/gems/ruby-1.9.2-p180/gems/devise-1.3.4/app/views/devise/shared/_links.erb (8.2ms)
+Rendered users/sessions/_login.html.erb (17.2ms)
+Rendered users/sessions/new.html.erb within layouts/application (314.4ms)
+Completed 200 OK in 676ms (Views: 330.1ms | ActiveRecord: 7.2ms)
+
+
+Started POST "/d/users/sign_in" for 127.0.0.1 at 2011-07-18 01:14:49 -0500
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u5GhIC3wZO6wLi2Wu2nCYE6lqvGU5B6XidFzO6o3Lj8=", "user"=>{"email"=>"admin@intown.com", "text"=>"Password", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mSQL (3.0ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mUser Load (1.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'admin@intown.com' LIMIT 1
+  [1m[36mSQL (5.0ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+Completed   in 315ms
+  Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u5GhIC3wZO6wLi2Wu2nCYE6lqvGU5B6XidFzO6o3Lj8=", "user"=>{"email"=>"admin@intown.com", "text"=>"Password", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+WARNING: Can't mass-assign protected attributes: text
+Rendered /home/apeiron/.rvm/gems/ruby-1.9.2-p180/gems/devise-1.3.4/app/views/devise/shared/_links.erb (8.4ms)
+Rendered users/sessions/_login.html.erb (15.9ms)
+Rendered users/sessions/new.html.erb within layouts/application (197.0ms)
+Completed 200 OK in 486ms (Views: 213.2ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-18 01:14:57 -0500
+  Processing by PagesController#home as HTML
+  [1m[35mSQL (3.1ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+Rendered shared/_services.html.erb (7.2ms)
+Rendered shared/_remote_user_signup.html.erb (7.0ms)
+Rendered shared/_sign_up.html.erb (133.3ms)
+Rendered shared/_new_user_form.html.erb (140.5ms)
+Rendered users/sessions/_login.html.erb (15.0ms)
+Rendered pages/home.html.erb within layouts/application (188.5ms)
+Completed 200 OK in 570ms (Views: 204.6ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/d/users/confirmation?confirmation_token=HgVtyyDgPSv9upY1kAik" for 127.0.0.1 at 2011-07-18 01:15:07 -0500
+  Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"HgVtyyDgPSv9upY1kAik"}
+  [1m[36mSQL (3.7ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."confirmation_token" = 'HgVtyyDgPSv9upY1kAik' LIMIT 1
+  [1m[36mSQL (2.9ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+Rendered /home/apeiron/.rvm/gems/ruby-1.9.2-p180/gems/devise-1.3.4/app/views/devise/shared/_links.erb (8.0ms)
+Rendered users/sessions/_login.html.erb (16.7ms)
+Rendered users/confirmations/new.html.erb within layouts/application (283.8ms)
+Completed 200 OK in 561ms (Views: 301.7ms | ActiveRecord: 7.8ms)
+
+
+Started POST "/d/users/confirmation" for 127.0.0.1 at 2011-07-18 01:15:25 -0500
+  Processing by Devise::ConfirmationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9lPP6fJ++Bxz84W3ZGt/njqnO6QD/yUUvqJb588J9CM=", "user"=>{"email"=>"d.reinhold@yahoo.com"}, "commit"=>"Resend confirmation instructions"}
+  [1m[35mSQL (3.2ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'd.reinhold@yahoo.com' LIMIT 1[0m
+  [1m[35mSQL (3.5ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+Rendered /home/apeiron/.rvm/gems/ruby-1.9.2-p180/gems/devise-1.3.4/app/views/devise/shared/_links.erb (8.6ms)
+Rendered users/sessions/_login.html.erb (19.1ms)
+Rendered users/confirmations/new.html.erb within layouts/application (328.8ms)
+Completed 200 OK in 584ms (Views: 345.9ms | ActiveRecord: 7.9ms)
+
+
+Started POST "/d/users/sign_in" for 127.0.0.1 at 2011-07-18 01:15:45 -0500
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9lPP6fJ++Bxz84W3ZGt/njqnO6QD/yUUvqJb588J9CM=", "user"=>{"email"=>"d.reinhold@yahoo.com", "text"=>"Password", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mSQL (5.0ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mUser Load (1.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'd.reinhold@yahoo.com' LIMIT 1
+  [1m[36mSQL (2.9ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+Completed   in 578ms
+  Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9lPP6fJ++Bxz84W3ZGt/njqnO6QD/yUUvqJb588J9CM=", "user"=>{"email"=>"d.reinhold@yahoo.com", "text"=>"Password", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+WARNING: Can't mass-assign protected attributes: text
+Rendered /home/apeiron/.rvm/gems/ruby-1.9.2-p180/gems/devise-1.3.4/app/views/devise/shared/_links.erb (8.0ms)
+Rendered users/sessions/_login.html.erb (15.2ms)
+Rendered users/sessions/new.html.erb within layouts/application (193.7ms)
+Completed 200 OK in 481ms (Views: 209.9ms | ActiveRecord: 9.1ms)
+
+
+Started POST "/d/users/sign_in" for 127.0.0.1 at 2011-07-18 01:15:52 -0500
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9lPP6fJ++Bxz84W3ZGt/njqnO6QD/yUUvqJb588J9CM=", "user"=>{"email"=>"d.reinhold@yahoo.com", "text"=>"Password", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mSQL (3.0ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'd.reinhold@yahoo.com' LIMIT 1[0m
+  [1m[35mSQL (3.3ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (1.1ms)[0m  UPDATE "users" SET "current_sign_in_at" = '2011-07-18 06:15:53.715446', "sign_in_count" = 2, "updated_at" = '2011-07-18 06:15:53.718008' WHERE "users"."id" = 3
+  [1m[36mSQL (13.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 732ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-18 01:15:53 -0500
+  Processing by PagesController#home as HTML
+  [1m[35mSQL (3.0ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mSQL (2.9ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mUser Load (1.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mCompany Load (1.7ms)[0m  [1mSELECT "companies".* FROM "companies" INNER JOIN "relationships" ON "companies".id = "relationships".company_id WHERE (("relationships".user_id = 3))[0m
+Rendered shared/_searchbar.html.erb (4.2ms)
+Rendered pages/home.html.erb within layouts/application (222.4ms)
+Completed 200 OK in 589ms (Views: 236.7ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2011-07-18 01:15:56 -0500
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[35mSQL (3.3ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35mSQL (2.8ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 329ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-18 01:15:56 -0500
+  Processing by PagesController#home as HTML
+  [1m[36mSQL (3.0ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+Rendered shared/_services.html.erb (8.3ms)
+Rendered shared/_remote_user_signup.html.erb (8.4ms)
+Rendered shared/_sign_up.html.erb (158.1ms)
+Rendered shared/_new_user_form.html.erb (166.3ms)
+Rendered users/sessions/_login.html.erb (143.2ms)
+Rendered pages/home.html.erb within layouts/application (348.4ms)
+Completed 200 OK in 622ms (Views: 365.5ms | ActiveRecord: 10.9ms)

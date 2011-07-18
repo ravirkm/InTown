@@ -2,7 +2,7 @@
 // This file is automatically included by javascript_include_tag :defaults
 
 $(document).ready(function(){ 
-  var active_color = '#FFF'; // Colour of user provided text
+  var active_color = '#111'; // Colour of user provided text
 	var inactive_color = '#999'; // Colour of default text
 	$("input#default-value").css("color", inactive_color);
 	var default_values = new Array();
